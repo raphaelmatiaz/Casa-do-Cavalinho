@@ -4,22 +4,20 @@ import GetDirectionsButton from "./components/GetDirectionBtn";
 export default function Home() {
   return (
     <>
-      <section id="hero" className="w-[100vw] h-screen bg-white">
+      
 
-        <nav className="w-[100%]">
-          <ul className="max-w-[100vw] flex flex-row justify-around items-center">
+        <nav className="w-[100%] sticky top-0 z-1 ">
+          <ul className="max-w-[100vw] flex flex-row justify-around items-center text-black">
             
               <li className="flex flex-row gap-[20px]">
                 <a href="">Location</a>
                 <a href="">Timetable</a>
                 <a href="">About Us</a>
               </li>
-              
-              
             
             <li className="self-center">
               <a href="">
-                <div className="flex flex-col justify-center items-center mt-4">
+                <div className="flex flex-col justify-center items-center mt-4 relative left-[38px]">
                   <Image
                     src={"/horse.svg"}
                     width={120}
@@ -41,8 +39,39 @@ export default function Home() {
             </li>
           </ul>
         </nav>
+        
+<section id="hero" className="relative w-[100vw] h-[70vh] mt-10 flex flex-col justify-center">
+  <video
+    src="/videos/sample.mp4"
+    loop
+    autoPlay
+    muted
+    className="absolute top-0 left-0 w-full h-full object-cover grayscale
+"
+  ></video>
 
-      </section>
+  <div id="hero-presentation-wrapper" className="relative z-10 mb-[10vh]">
+    <p id="hero-h1" className="text-center text-[64px]">
+      The <em className="text-[#86672B] not-italic">Goldsmith’s</em> Touch, and <br />
+      the <em className="text-[#1986C9] not-italic">Watchmaker’s</em> Mind
+    </p>
+    <p id="hero-h2" className="text-center text-[20px] italic tracking-[8px] mt-8">
+      Jewelery — Watches — Repairs — Commitions
+    </p>
+    <div id="hero-buttons-wrapper" className="flex justify-center mt-16 gap-32">
+      <button className="bg-[#86672B] px-30 py-2 rounded-full text-xl text-white">Shop Location</button>
+      <button className="bg-blue-500 px-30 radius-4 rounded-full text-xl text-white">Our Services</button>
+    </div>
+  </div>
+
+  <div id="scroll-icon-positioner" className="absolute bottom-0 left-[48%] z-10">
+    <div className="flex flex-col items-center">
+      <p className="italic tracking-[8px]">scroll</p>
+      <div className="h-[48px] w-[1px] bg-white mt-[4px]"></div>
+    </div>
+  </div>
+</section>
+
     
       <section className="w-screen min-h-screen h-fit bg-blue-400"></section>
       <section className="w-screen min-h-screen h-fit bg-white"></section>
