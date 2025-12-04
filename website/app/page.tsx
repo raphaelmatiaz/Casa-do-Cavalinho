@@ -4,10 +4,8 @@ import GetDirectionsButton from "./components/GetDirectionBtn";
 export default function Home() {
   return (
     <>
-      
-
-        <nav className="w-[100%] sticky top-0 z-1 ">
-          <ul className="max-w-[100vw] flex flex-row justify-around items-center text-black">
+        <nav className="w-full bg-[rgba(255,255,255,0.0)] absolute top-0 z-10">
+          <ul className="max-w-[100vw] flex flex-row justify-around items-center text-white">
             
               <li className="flex flex-row gap-[20px]">
                 <a href="">Location</a>
@@ -19,7 +17,7 @@ export default function Home() {
               <a href="">
                 <div className="flex flex-col justify-center items-center mt-4 relative left-[38px]">
                   <Image
-                    src={"/horse.svg"}
+                    src={"/horse.png"}
                     width={120}
                     height={120}
                     alt="Official Logo">
@@ -40,27 +38,27 @@ export default function Home() {
           </ul>
         </nav>
         
-<section id="hero" className="relative w-[100vw] h-[70vh] mt-10 flex flex-col justify-center">
-  <video
-    src="/videos/sample.mp4"
-    loop
-    autoPlay
-    muted
-    className="absolute top-0 left-0 w-full h-full object-cover grayscale
-"
-  ></video>
+<section id="hero" className="bg-black relative w-[100vw] h-[100vh] flex flex-col justify-center">
 
-  <div id="hero-presentation-wrapper" className="relative z-10 mb-[10vh]">
+    <video
+      src="/videos/cavalinho.mp4"
+      loop
+      autoPlay
+      muted
+      className="absolute top-0 left-0 w-full h-full object-cover opacity-35 grayscale-25">
+    </video>
+
+  <div id="hero-presentation-wrapper" className="relative z-10 mb-[10vh] mt-[140px] text-shadow-lg">
     <p id="hero-h1" className="text-center text-[64px]">
-      The <em className="text-[#86672B] not-italic">Goldsmith’s</em> Touch, and <br />
-      the <em className="text-[#1986C9] not-italic">Watchmaker’s</em> Mind
+      The <em className="text-[var(--color-secondary)] not-italic">Goldsmith’s</em> Touch, and <br />
+      the <em className="text-[var(--color-primary)] not-italic">Watchmaker’s</em> Mind
     </p>
     <p id="hero-h2" className="text-center text-[20px] italic tracking-[8px] mt-8">
-      Jewelery — Watches — Repairs — Commitions
+      Jewelery — Watches — Repairs — Commissions
     </p>
-    <div id="hero-buttons-wrapper" className="flex justify-center mt-16 gap-32">
-      <button className="bg-[#86672B] px-30 py-2 rounded-full text-xl text-white">Shop Location</button>
-      <button className="bg-blue-500 px-30 radius-4 rounded-full text-xl text-white">Our Services</button>
+    <div id="hero-buttons-wrapper" className="flex justify-center mt-16 gap-32 ">
+      <button className="bg-[var(--color-secondary)] px-30 py-2 rounded-full text-xl text-white shadow-2xl">Shop Location</button>
+      <button className="bg-[var(--color-primary)] px-30 radius-4 rounded-full text-xl text-white shadow-2xl">Our Services</button>
     </div>
   </div>
 
