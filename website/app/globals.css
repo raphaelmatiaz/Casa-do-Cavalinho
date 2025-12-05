@@ -21,6 +21,8 @@ body {
 /* Colors */
   --color-primary: #1475b1;
   --color-secondary: #86672B; 
+  --font-libre-bodoni: var(--font-libre-bodoni);
+  --font-caudex: var(--font-caudex);
 }
 
 
