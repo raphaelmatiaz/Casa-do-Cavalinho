@@ -40,7 +40,7 @@ export default function Home() {
         </ul>
       </nav>
         
-      <section id="hero" className="bg-black relative w-[100vw] h-[100vh] flex flex-col justify-center">
+      <section id="hero-section" className="bg-black relative w-[100vw] h-[100vh] flex flex-col justify-center">
 
           <video
             src="/videos/cavalinho.mp4"
@@ -72,8 +72,8 @@ export default function Home() {
         </div>
       </section>
 
-    
-      <section className="w-screen h-screen min-h-screen bg-blue-400 relative">
+    {/* SHOP LOCATION */}
+      <section id="shop-location-section" className="w-screen h-screen min-h-screen bg-blue-400 relative">
 
         <div id="positioner-div" className="w-full h-[70%] absolute bottom-0 flex ">
 
@@ -101,7 +101,54 @@ export default function Home() {
         
       </section>
 
-      <section className="w-screen h-screen min-h-screen bg-white"></section>
+      {/* TIMETABLE */}
+      <section id="timetable-section" className="w-screen h-screen min-h-screen text-black bg-white relative pb-4">
+
+        <div id="positioner-div" className="w-full h-[70%] absolute bottom-0 flex ">
+
+          <div id="left-positioner-div" className=" h-[100%] w-full flex items-start justify-center flex-col gap-9">
+            <div className="w-[725px] h-[450px] overflow-hidden relative">
+              <Image
+                src="/watches.webp"
+                alt="Watches"
+                fill
+                className="object-cover scale-110 ml-4"
+              />
+            </div>
+          </div>
+
+          <div id="right-positioner-div" className="h-[100%] w-full flex items-start justify-center flex-col ">
+            <h3 className="text-6xl text-center mb-[8px] self-center">Timetable</h3>
+            <ul className="ml-20 mb-">
+
+              <li>
+                <div className="border-b border-black py-[24px]">
+                  <h4 className="text-3xl mb-[4px]">Status</h4>
+                  <p className="font-caudex text-2xl">Our shop is currently <em className="not-italic font-bold text-red-700"> Closed</em></p>
+                  <p className="font-caudex text-2xl">We open <em className="not-italic font-bold">tomorrow at 10:30am</em></p>
+                </div>
+              </li>
+
+              <li>
+                <div className="border-b border-black py-[24px]">
+                  <h4 className="text-3xl mb-[4px]">Open Hours</h4>
+                  <p className="font-caudex text-2xl"><em className="not-italic font-bold text-[var(--color-secondary)]">Monday</em> to <em className="not-italic font-bold text-[var(--color-primary)]">Friday</em></p>
+                  <p className="font-caudex text-2xl">From <em className="not-italic font-bold">10:30am</em> to  <em className="not-italic font-bold">1:30pm</em></p>
+                </div>
+              </li>
+
+              <li>
+                <div className="py-[24px]">
+                  <h4 className="text-3xl mb-[4px]">Closed Hours</h4>
+                  <p className="font-caudex text-2xl"><em className="not-italic font-bold">Saturday</em> & <em className="not-italic font-bold">Sunday</em></p>
+                </div>
+              </li>
+
+            </ul>
+          </div>
+
+        </div>
+      </section>
       <section className="w-screen h-screen min-h-screen  bg-gray-300"></section>
 
     </>
