@@ -28,7 +28,7 @@ export default function GetDirectionsButton() {
   return (
     <button
       onClick={handleClick}
-      className="px-4 py-2 bg-black text-white rounded-md"
+      className="bg-white px-32 py-2 min-w-[380px] radius-4 rounded-full text-xl text-black shadow-2xl"
     >
       Get Directions
     </button>

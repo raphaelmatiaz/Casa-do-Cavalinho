@@ -15,11 +15,13 @@ body {
   width: 100vw;
   overflow-x: hidden;
   color: white;
+  font-family: var(--font-libre-bodoni);
 }
 
 :root {
 /* Colors */
-  --color-primary: #1475b1;
+/* #1986C9 or #1475b1*/
+  --color-primary: #1986C9; 
   --color-secondary: #86672B; 
   --font-libre-bodoni: var(--font-libre-bodoni);
   --font-caudex: var(--font-caudex);
