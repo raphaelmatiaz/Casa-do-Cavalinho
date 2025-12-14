@@ -53,7 +53,7 @@ export default function Home() {
       <section id="hero-section" className="bg-black relative w-[100vw] h-[100vh] flex flex-col justify-center">
 
           <video
-            src="/videos/cavalinho.mp4"
+            src="/videos/cavalinho-hero.mp4"
             loop
             autoPlay
             muted
