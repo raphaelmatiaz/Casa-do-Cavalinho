@@ -213,13 +213,42 @@ export default function Home() {
 
       </section>
 
+      {/* MEET THE OWNER */}
+      <section id="owner-section" className="w-screen min-h-screen text-black bg-white relative">
 
+         <div id="positioner-div" className="w-full h-auto flex pb-[184px]">
 
+          <div id="right-positioner-div" className="h-[100%] min-w-[50vh] flex items-center justify-center flex-col px-[18rem]">
 
-      <section id="services-section" className="w-screen h-screen min-h-screen text-black bg-white relative pb-4"></section>
-      <section id="products-section" className="w-screen h-screen min-h-screen text-black bg-white relative pb-4"></section>
-      <section id="highlights-section" className="w-screen h-screen min-h-screen text-black bg-white relative pb-4"></section>
-      <section id="contact-section" className="w-screen h-screen min-h-screen text-black bg-white relative pb-4"></section>
+              <article className="text-4xl font-thin font-caudex">
+                <Image
+                  src="/jorge-matias.webp"
+                  alt="Watches"
+                  width={800}
+                  height={800}
+                  // sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  className="object-fit float-right ml-24 mb-24 relative left-64"
+                  />
+              <h3 className="font-libre text-6xl text-center mb-28 self-center">The Man Behind the <br /> Counter</h3>
+              <p id="hero-h2" className="text-center text-[20px] italic tracking-[8px] mt-8 font-libre text-[var(--color-secondary)] mb-[32px]">
+                Jorge Cabrita Matias
+              </p>
+                <p className="mb-16">At the heart of Joalharia Cavalinho is Jorge Cabrita Matias, a Portuguese craftsman, artisan and artist, who's life has been shaped by artistry, precision, and genuine human connection. </p>
+                <p className="mb-16">Jorge began his artisan journey in his early twenties in Belgium, where he founded the renowned boutique La Boucle d’Art, just steps from Brussels’ iconic Grand Place.</p>
+                <p className="mb-16">There, he learned to master multiple disciplines—salesmanship, craftsmanship, clockworking, goldsmithing, and artistic design — building a reputation for excellence and authenticity.</p>
+                <p className="mb-16">Decades later, his path led him back to his roots in the Algarve, where he established Joalharia Cavalinho in Albufeira. For over 30 years, the shop has flourished under his steady hand, becoming a trusted, beloved presence in the community.</p>
+                <p className="mb-16">Jorge is more than a jeweler or a watchmaker—he is a passionate storyteller, an artisan with an eye for detail, and a warm, welcoming guide who takes time to understand every client’s needs and desires. His dedication, experience, and heartfelt approach are the soul of the shop, and the reason so many customers return year after year.</p>
+                {/* <img src="/jorge-matias.webp" className="float-right" alt="" /> */}
+              </article>
+
+            </div>
+         </div>
+      </section>
+
+      <section id="services-section" className="w-screen h-screen min-h-screen text-black bg-gray-300 relative"></section>
+      <section id="products-section" className="w-screen h-screen min-h-screen text-black bg-white relative"></section>
+      <section id="highlights-section" className="w-screen h-screen min-h-screen text-black bg-white relative"></section>
+      <section id="contact-section" className="w-screen h-screen min-h-screen text-black bg-white relative"></section>
 
 
 
