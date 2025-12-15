@@ -168,7 +168,7 @@ export default function Navbar() {
         {/* Logo */}
         <li className="self-center">
           <div
-            className="flex flex-col justify-center items-center mt-2 relative left-[36px] mb-2 cursor-pointer"
+            className="flex flex-col justify-center items-center mt-2 relative left-[-26px] mb-2 cursor-pointer"
             onClick={scrollToTop}
           >
             <div className="relative w-[100px] h-[100px]">
