@@ -3,10 +3,17 @@
 @tailwind components;
 @tailwind utilities;
 
+*, *:before, *:after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
 html {
   min-width: 100vw;
   max-width: 100vw;
   width: 100vw;
+  font-size: 62.5%;
 }
 
 body {
@@ -25,6 +32,12 @@ body {
   --color-secondary: #86672B; 
   --font-libre-bodoni: var(--font-libre-bodoni);
   --font-caudex: var(--font-caudex);
+}
+
+section {
+  /* pt-[325px] pb-[184px] */
+  padding-top: 24rem;
+  padding-bottom: 18rem;
 }
 
 
