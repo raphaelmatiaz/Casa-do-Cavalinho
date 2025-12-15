@@ -6,48 +6,17 @@ import Navbar from "./components/Navbar"
 export default function Home() {
 
   const scrollToShopLocationSection = () => {
-      const section = document.getElementById('shop-location-section');
+      const section = document.getElementById('location-section');
       section?.scrollIntoView({ behavior: 'smooth' });
     };
 
+  const scrollToServicesSection = () => {
+    const section = document.getElementById('services-section');
+    section?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
     <>
-      {/* <nav className="w-full bg-[rgba(0,0,0,0.05)] z-50 fixed top-0 font-libre">
-        <ul className="max-w-[100vw] flex flex-row justify-around items-center text-white">
-          
-          <li className="flex flex-row gap-[20px]">
-            <a href="">Location</a>
-            <a href="">Timetable</a>
-            <a href="">About Us</a>
-          </li>
-          
-          <li className="self-center">
-            <a href="">
-              <div className="flex flex-col justify-center items-center mt-4 relative left-[36px] mb-4">
-                <Image
-                  src={"/logo-white.png"}
-                  width={120}
-                  height={120}
-                  alt="Official Logo">
-                </Image>
-                <div className="wrapper flex flex-col items-center justify-center text-center">
-                  <h1 className="text-xl tracking-[3px]">Joalharia Cavalinho</h1>
-                  <h2 className="text-[8px] italic tracking-[4px] font-caudex">Goldsmithing and Clockworking <br />Since  1975</h2>
-                </div>
-              </div>
-            </a>
-          </li>
-
-          <li className="flex flex-row gap-[20px]">
-            <a href="">Services</a>
-            <a href="">Products</a>
-            <a href="">Highlights</a>
-            <a href="">Contact</a>
-          </li>
-
-        </ul>
-      </nav> */}
-
       <Navbar></Navbar>
         
       <section id="hero-section" className="bg-black relative w-[100vw] h-[100vh] flex flex-col justify-center">
@@ -70,14 +39,19 @@ export default function Home() {
           </p>
           <div id="hero-buttons-wrapper" className="flex justify-center mt-16 gap-32 ">
             <button
-               className="bg-[var(--color-secondary)] px-32 min-w-[380px] py-2 rounded-full text-xl text-white shadow-2xl"
+               className="bg-[var(--color-secondary)] px-32 min-w-[380px] py-5 rounded-full text-3xl text-white shadow-2xl"
                onClick={() => {
                 scrollToShopLocationSection();
                }}
                >
                Shop Location
             </button>
-            <button className="bg-[var(--color-primary)] px-32 min-w-[380px] radius-4 rounded-full text-xl text-white shadow-2xl">Our Services</button>
+            <button 
+              className="bg-[var(--color-primary)] px-32 py-5 min-w-[380px] radius-4 rounded-full text-3xl text-white shadow-2xl"
+              onClick={() => {
+                scrollToServicesSection();
+              }}
+              >Our Services</button>
           </div>
         </div>
 
@@ -90,27 +64,34 @@ export default function Home() {
       </section>
 
     {/* SHOP LOCATION */}
-      <section id="location-section" className="w-screen h-screen min-h-screen bg-blue-400 relative">
+      <section id="location-section" className="w-screen h-fit min-h-screen bg-sky-700  relative ">
 
-        <div id="positioner-div" className="w-full h-[70%] absolute bottom-0 flex ">
+        <div id="positioner-div" className="w-full flex ">
 
-          <div id="left-positioner-div" className=" h-[100%] w-full flex items-center justify-center flex-col gap-9">
-            <h3 className="text-6xl text-center">Looking for our <br /> Shop?</h3>
-            <p className="text-5xl font-caudex">We are Located at:</p>
-            <p className="text-3xl font-caudex">Rua João de Deus 24 A <br /> 8200-142 Albufeira</p>
-            <GetDirectionsButton></GetDirectionsButton>
+          <div id="left-positioner-div" className=" min-w-[50vw] flex flex-col justify-center items-center">
+            <h3 className="text-6xl text-center mb-[32px]">Looking for our <br /> Shop?</h3>
+
+             <div className="">
+               <p id="hero-h2" className="text-center text-[20px] italic tracking-[8px] font-libre text-white mt-[32px]">
+                We are Located at:
+              </p>
+              <p 
+              className="text-4xl font-caudex mb-[32px] border-b border-white py-[24px] flex flex-col justify-center items-center text-center">Rua João de Deus 24 A <br />
+              8200-142 Albufeira, <br /> Portugal </p>
+              <GetDirectionsButton></GetDirectionsButton>
+             </div>
           </div>
 
-          <div id="right-positioner-div" className="h-[100%] w-full flex items-center justify-center flex-col">
+          <div id="right-positioner-div" className="h-[450px] w-full flex items-center justify-center flex-col">
             <iframe 
               src="https://www.google.com/maps/embed?pb=!4v1763936381453!6m8!1m7!1sg9dnYX8yMmJNt1DQrpW1EA!2m2!1d37.08726626707691!2d-8.253348173524856!3f203.83644824871865!4f-1.5222311703891336!5f0.7820865974627469" 
-              width="750" 
-              height="500" 
+              // width="750" 
+              // height="500" 
               style={{border:0}}
               allowFullScreen
               loading="lazy" 
               referrerPolicy="no-referrer-when-downgrade"
-              className="">
+              className="w-full h-full">
             </iframe>
           </div>
 
@@ -119,57 +100,121 @@ export default function Home() {
       </section>
 
       {/* TIMETABLE */}
-      <section id="timetable-section" className="w-screen h-screen min-h-screen text-black bg-white relative pb-4">
+      <section id="timetable-section" className="w-screen min-h-screen text-black bg-white relative">
+        
+        <div id="positioner-div" className=" w-full h-auto flex">
 
-        <div id="positioner-div" className="w-full h-[70%] absolute bottom-0 flex ">
-
-          <div id="left-positioner-div" className=" h-[100%] w-full flex items-start justify-center flex-col gap-9">
-            <div className="w-[725px] h-[450px] overflow-hidden relative">
+          <div id="right-positioner-div" className=" h-[100%] w-[50vw] max-w-[50vw] flex justify-center flex-col">
+            <div className="w-full h-[600px] relative">
               <Image
                 src="/watches.webp"
                 alt="Watches"
                 fill
-                className="object-cover scale-110 ml-4"
+                className="object-cover"
               />
             </div>
           </div>
 
-          <div id="right-positioner-div" className="h-[100%] w-full flex items-start justify-center flex-col ">
-            <h3 className="text-6xl text-center mb-[8px] self-center">Timetable</h3>
-            <ul className="ml-20 mb-">
+          <div id="left-positioner-div" className="h-[100%] w-full max-w-[50vw] flex items-center justify-center flex-col px-[18rem]">
+            <h3 className="text-6xl text-center mb-28 self-center">Timetable</h3>
+            <p id="hero-h2" className="text-center text-[20px] italic tracking-[8px] mt-8 font-libre text-[var(--color-secondary)] mb-[32px]">
+              Openening & Closing Hours
+            </p>
 
-              <li>
-                <div className="border-b border-black py-[24px]">
-                  <h4 className="text-3xl mb-[4px]">Status</h4>
-                  <p className="font-caudex text-2xl">Our shop is currently <em className="not-italic font-bold text-red-700"> Closed</em></p>
-                  <p className="font-caudex text-2xl">We open <em className="not-italic font-bold">tomorrow at 10:30am</em></p>
-                </div>
-              </li>
 
-              <li>
-                <div className="border-b border-black py-[24px]">
-                  <h4 className="text-3xl mb-[4px]">Open Hours</h4>
-                  <p className="font-caudex text-2xl"><em className="not-italic font-bold text-[var(--color-secondary)]">Monday</em> to <em className="not-italic font-bold text-[var(--color-primary)]">Friday</em></p>
-                  <p className="font-caudex text-2xl">From <em className="not-italic font-bold">10:30am</em> to  <em className="not-italic font-bold">1:30pm</em></p>
-                </div>
-              </li>
+            <div id="shop-status" className="border-b border-black py-[24px] flex flex-col justify-center items-start w-full">
+              <h4 className="text-3xl mb-[4px]">Status</h4>
+              <p className="font-caudex text-2xl">Our shop is currently <em className="not-italic font-bold text-red-700"> Closed</em></p>
+              <p className="font-caudex text-2xl">We open <em className="not-italic font-bold">tomorrow at 10:30am</em></p>
+            </div>
 
-              <li>
-                <div className="py-[24px]">
-                  <h4 className="text-3xl mb-[4px]">Closed Hours</h4>
-                  <p className="font-caudex text-2xl"><em className="not-italic font-bold">Saturday</em> & <em className="not-italic font-bold">Sunday</em></p>
-                </div>
-              </li>
+            <div id="open-closed" className="flex flex-row border-b border-black gap-32 w-full">
+              <div className="py-[24px]">
+                <h4 className="text-3xl mb-[4px]">Open</h4>
+                <p className="font-caudex text-2xl"><em className="not-italic font-bold text-[var(--color-secondary)]">Monday</em> to <em className="not-italic font-bold text-[var(--color-primary)]">Friday</em></p>
+                <p className="font-caudex text-2xl">From <em className="not-italic font-bold">10:30am</em> to  <em className="not-italic font-bold">1:30pm</em></p>
+              </div>
+              <div className="py-[24px]">
+                <h4 className="text-3xl mb-[4px]">Closed</h4>
+                <p className="font-caudex text-2xl"><em className="not-italic font-bold">Saturday</em> & <em className="not-italic font-bold">Sunday</em></p>
+              </div>
+            </div>
 
-            </ul>
+
+
+
+
           </div>
-
         </div>
       </section>
 
 
+      {/* About Us */}
+      <section id="about-section" className="w-screen h-auto min-h-screen text-black bg-gray-300 relative">
 
-      <section id="about-section" className="w-screen h-screen min-h-screen text-black bg-gray-300 relative pb-4"></section>
+        <div id="positioner-div" className=" w-full h-auto flex pb-[184px]">
+
+
+            <div id="left-positioner-div" className="h-[100%] w-full max-w-[50vw] flex items-center justify-center flex-col px-[18rem]">
+              <h3 className="text-6xl text-center mb-28 self-center">About Us</h3>
+              <p id="hero-h2" className="text-center text-[20px] italic tracking-[8px] mt-8 font-libre text-[var(--color-secondary)] mb-[32px]">
+                50 years of expertiese
+              </p>
+              <article className="text-4xl font-thin font-caudex">
+                <p className="mb-16">For over 50 years, Joalharia Cavalinho has been dedicated to the art of fine jewelry and watchmaking with the same passion, care, and craftsmanship that defined our beginnings.</p>
+                <p>We are a family-run, heritage shop known for our close relationship with customers and our unique selection of pieces that stand the test of time.</p>
+              </article>
+            </div>
+
+            
+            <div id="left-positioner-div" className=" h-[100%] w-[50vw] max-w-[50vw] flex justify-center flex-col">
+              <div className="w-full h-[600px]  relative">
+                <Image
+                  src="/shop-outside.webp"
+                  alt="Watches"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+            </div>
+
+          </div>
+
+
+          <div id="positioner-div" className="w-full h-screen flex ">
+
+           
+
+            
+            <div id="left-positioner-div" className=" h-[100%] w-[50vw] max-w-[50vw] flex justify-center flex-col">
+              <div className="w-full h-[600px] relative">
+                <Image
+                  src="/vitrine.webp"
+                  alt="Watches"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+            </div>
+
+             <div id="left-positioner-div" className="h-[100%] w-full max-w-[50vw] flex items-center justify-center flex-col px-[18rem]">
+              <p id="hero-h2" className="text-center text-[20px] italic tracking-[8px] mt-8 font-libre text-[var(--color-secondary)] mb-[32px]">
+                A Boutique of Treasures
+              </p>
+              <article className="text-4xl font-thin font-caudex">
+                <p className="mb-16">Our space—warm, intimate, and reminiscent of a small brocante—is filled with exceptional finds, refined jewelry, Portuguese-made creations, and carefully chosen second-hand beauties. Here you’ll discover everything from Pandora, Seiko, and Filigree pieces to Breitling, Rolex, wedding bands, collectors’ items, and many other rare artifacts.</p>
+                <p className="mb-16">More than a store, we are a meeting place for enthusiasts who value authenticity, history, and lasting quality. With hundreds of satisfied customers over the decades, we continue to offer expert knowledge, dedicated service, and that unmistakable feeling of finding something that seems meant just for you.</p>
+                <p>At Joalharia Cavalinho, there’s always a treasure waiting.</p>
+              </article>
+            </div>
+
+          </div>
+
+      </section>
+
+
+
+
       <section id="services-section" className="w-screen h-screen min-h-screen text-black bg-white relative pb-4"></section>
       <section id="products-section" className="w-screen h-screen min-h-screen text-black bg-white relative pb-4"></section>
       <section id="highlights-section" className="w-screen h-screen min-h-screen text-black bg-white relative pb-4"></section>

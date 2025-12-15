@@ -331,7 +331,7 @@ useEffect(() => {
   return (
     <nav
       ref={navRef}
-      className="w-full fixed top-0 z-50 font-libre pointer-events-auto bg-transparent"
+      className="w-full fixed top-0 z-50 font-caudex pointer-events-auto bg-transparent text-[1.4rem]"
     >
       <ul
         className={`max-w-[100vw] flex flex-row justify-around items-center px-4 py-2 transition-colors duration-75 ${
@@ -368,7 +368,7 @@ useEffect(() => {
             className="flex flex-col justify-center items-center mt-2 relative left-[36px] mb-2 cursor-pointer"
             onClick={scrollToTop}
           >
-            <div className="relative w-[120px] h-[120px]">
+            <div className="relative w-[100px] h-[100px]">
               <Image
                 src="/logo-white.png"
                 alt="Logo white"
@@ -423,3 +423,45 @@ useEffect(() => {
     </nav>
   );
 }
+
+
+
+
+
+// BACKUP
+
+      {/* <nav className="w-full bg-[rgba(0,0,0,0.05)] z-50 fixed top-0 font-libre">
+        <ul className="max-w-[100vw] flex flex-row justify-around items-center text-white">
+          
+          <li className="flex flex-row gap-[20px]">
+            <a href="">Location</a>
+            <a href="">Timetable</a>
+            <a href="">About Us</a>
+          </li>
+          
+          <li className="self-center">
+            <a href="">
+              <div className="flex flex-col justify-center items-center mt-4 relative left-[36px] mb-4">
+                <Image
+                  src={"/logo-white.png"}
+                  width={120}
+                  height={120}
+                  alt="Official Logo">
+                </Image>
+                <div className="wrapper flex flex-col items-center justify-center text-center">
+                  <h1 className="text-xl tracking-[3px]">Joalharia Cavalinho</h1>
+                  <h2 className="text-[8px] italic tracking-[4px] font-caudex">Goldsmithing and Clockworking <br />Since  1975</h2>
+                </div>
+              </div>
+            </a>
+          </li>
+
+          <li className="flex flex-row gap-[20px]">
+            <a href="">Services</a>
+            <a href="">Products</a>
+            <a href="">Highlights</a>
+            <a href="">Contact</a>
+          </li>
+
+        </ul>
+      </nav> */}
