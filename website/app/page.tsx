@@ -214,12 +214,12 @@ export default function Home() {
       </section>
 
 
+<section id="owner-section" className="w-screen h-screen min-h-screen text-black bg-white relative"></section>
 
-
-      <section id="services-section" className="w-screen h-screen min-h-screen text-black bg-white relative pb-4"></section>
-      <section id="products-section" className="w-screen h-screen min-h-screen text-black bg-white relative pb-4"></section>
-      <section id="highlights-section" className="w-screen h-screen min-h-screen text-black bg-white relative pb-4"></section>
-      <section id="contact-section" className="w-screen h-screen min-h-screen text-black bg-white relative pb-4"></section>
+      <section id="services-section" className="w-screen h-screen min-h-screen text-black bg-white relative"></section>
+      <section id="products-section" className="w-screen h-screen min-h-screen text-black bg-white relative"></section>
+      <section id="highlights-section" className="w-screen h-screen min-h-screen text-black bg-white relative"></section>
+      <section id="contact-section" className="w-screen h-screen min-h-screen text-black bg-white relative"></section>
 
 
 
