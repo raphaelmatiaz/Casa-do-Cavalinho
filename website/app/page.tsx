@@ -6,9 +6,14 @@ import Navbar from "./components/Navbar"
 export default function Home() {
 
   const scrollToShopLocationSection = () => {
-      const section = document.getElementById('shop-location-section');
+      const section = document.getElementById('location-section');
       section?.scrollIntoView({ behavior: 'smooth' });
     };
+
+  const scrollToServicesSection = () => {
+    const section = document.getElementById('services-section');
+    section?.scrollIntoView({ behavior: 'smooth' });
+  };
 
   return (
     <>
@@ -77,7 +82,12 @@ export default function Home() {
                >
                Shop Location
             </button>
-            <button className="bg-[var(--color-primary)] px-32 min-w-[380px] radius-4 rounded-full text-xl text-white shadow-2xl">Our Services</button>
+            <button 
+              className="bg-[var(--color-primary)] px-32 min-w-[380px] radius-4 rounded-full text-xl text-white shadow-2xl"
+              onClick={() => {
+                scrollToServicesSection();
+              }}
+              >Our Services</button>
           </div>
         </div>
 
