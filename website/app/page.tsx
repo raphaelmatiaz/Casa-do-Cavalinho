@@ -4,6 +4,7 @@ import GetDirectionsButton from "./components/GetDirectionBtn";
 import Navbar from "./components/Navbar"
 import ServiceCard from "./components/ServiceCard";
 import ProductCard from "./components/ProductCard"
+import ContactForm from "./components/ContactForm";
 
 export default function Home() {
 
@@ -322,7 +323,7 @@ export default function Home() {
       {/* CONTACT */}
       <section id="contact-section" className="w-screen min-h-screen h-fit text-black bg-white relative">
 
- <div id="positioner-div" className="w-full flex ">
+        <div id="positioner-div" className="w-full flex ">
 
           <div id="left-positioner-div" className=" min-w-[50vw] h-fit flex flex-col justify-center items-center">
             <div id="wrapper" className="bg-red-500 px-[30%]">
@@ -330,21 +331,21 @@ export default function Home() {
                <div className="">
                  <p className="text-center text-[20px] italic tracking-[8px] font-libre text-black my-[32px]">
                   We’d Love to Hear <br /> From You
-                </p>
-                <p className="text-4xl font-caudex text-center">Feel Free to Email the owner through our contact form on the right, or by contacting at: </p>
-                <p
-                className="text-4xl font-caudex mb-[32px] border-b border-black py-[24px] flex flex-col justify-center items-center text-center">
-                jorge.albufeira55@gmail.com</p>
-                <p className="text-4xl font-caudex text-center">For any further assistance, feel free to directly call the owner at: </p>
-                <p 
-                className="text-4xl font-caudex mb-[32px] border-b border-black py-[24px] flex flex-col justify-center items-center text-center">
+                  </p>
+                  <p className="text-4xl font-caudex text-center">Feel Free to Email the owner through our contact form on the right, or by contacting at: </p>
+                  <p
+                  className="text-4xl font-caudex mb-[32px] border-b border-black py-[24px] flex flex-col justify-center items-center text-center">
+                  jorge.albufeira55@gmail.com</p>
+                  <p className="text-4xl font-caudex text-center">For any further assistance, feel free to directly call the owner at: </p>
+                  <p 
+                  className="text-4xl font-caudex mb-[32px] border-b border-black py-[24px] flex flex-col justify-center items-center text-center">
                   (+351) 914824244</p>
                </div>
             </div>
           </div>
 
           <div id="right-positioner-div" className="bg-blue-500 h-fit w-full flex items-center justify-center flex-col">
-               <p className="text-center text-[20px] italic tracking-[8px] font-libre text-black my-[32px]">
+               {/* <p className="text-center text-[20px] italic tracking-[8px] font-libre text-black my-[32px]">
                   Email Us Below
                 </p>
 
@@ -368,7 +369,9 @@ export default function Home() {
                   
                   <label htmlFor="message">Message</label>
                   <textarea id="message" name="message"  placeholder="Your message here..."></textarea>
-                </form>
+                </form> */}
+
+                <ContactForm></ContactForm>
                 
           </div>
 
