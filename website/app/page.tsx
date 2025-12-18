@@ -2,6 +2,8 @@
 import Image from "next/image";
 import GetDirectionsButton from "./components/GetDirectionBtn";
 import Navbar from "./components/Navbar"
+import ServiceCard from "./components/ServiceCard";
+import ProductCard from "./components/ProductCard"
 
 export default function Home() {
 
@@ -14,6 +16,13 @@ export default function Home() {
     const section = document.getElementById('services-section');
     section?.scrollIntoView({ behavior: 'smooth' });
   };
+
+  const scrollToSection = (id: string) => {
+    const section = document.getElementById(id);
+    section?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  const scrollToTop = () => scrollToSection("hero-section");
 
   return (
     <>
@@ -245,18 +254,141 @@ export default function Home() {
          </div>
       </section>
 
-      <section id="services-section" className="w-screen h-screen min-h-screen text-black bg-gray-300 relative"></section>
-      <section id="products-section" className="w-screen h-screen min-h-screen text-black bg-white relative"></section>
-      <section id="highlights-section" className="w-screen h-screen min-h-screen text-black bg-white relative"></section>
-      <section id="contact-section" className="w-screen h-screen min-h-screen text-black bg-white relative"></section>
+      {/* SERVICES */}
+      <section id="services-section" className="w-screen min-h-screen text-black bg-[#E2E2E2] relative">
+        <div id="positioner-div" className="w-full h-fit flex">
+          <div className="flex flex-col items-center justify-center w-full">
+            <h3 className="font-libre text-6xl text-center mb-28 self-center">Our Services</h3>
+            <p id="hero-h2" className="text-center text-[20px] italic tracking-[8px] mt-8 font-libre text-[var(--color-secondary)] mb-[32px]">
+              Every Service You Need <br /> All Under One Roof
+            </p>
+            <div 
+              id="card-container" 
+              className="flex flex-wrap items-left justify-evenly w-full h-fit px-[10vw] gap-y-10">
+                
+                <ServiceCard service="Watch Battery Change" image="/service-battery-change.jpeg"></ServiceCard>
+                <ServiceCard service="Clock and Watch Repairs" image="/service-watch-repair.jpeg"></ServiceCard>
+                <ServiceCard service="Clock and Watch Cleaning" image="/service-watch-cleaning.jpeg"></ServiceCard>
+                <ServiceCard service="Jewelery Repairs" image="/service-jewellery-repair.jpeg"></ServiceCard>
+                <ServiceCard service="Jewelery Cleaning" image="/service-jewellery-cleaning.jpg"></ServiceCard>
+                <ServiceCard service="Jewelery Sizing Adjustment" image="/service-jeweller-sizing.jpeg"></ServiceCard>
+                <ServiceCard service="Stone Setting" image="/service-stone-settings.jpeg"></ServiceCard>
+                <ServiceCard service="Engraving" image="/service-engraving.jpeg"></ServiceCard>
+                <ServiceCard service="Bath Plating (Gold and Silver)" image="/service-bath.jpeg"></ServiceCard>
+                <ServiceCard service="Scratch Removal (Watches and Jewelery)" image="/service-scratch-removal.jpeg"></ServiceCard>
+                <ServiceCard service="Custom Jewelery (to order)" image="/service-custom-jewellery.jpeg"></ServiceCard>
+            </div>
+          </div>
+        </div>
+      </section>
 
+      {/* PRODUCTS */}
+      <section id="products-section" className="w-screen min-h-screen text-black bg-white relative">
+        <div id="positioner-div" className="w-full h-fit flex">
+          <div className="flex flex-col items-center justify-center w-full">
+            <h3 className="font-libre text-6xl text-center mb-28 self-center">Our Products</h3>
+            <p id="hero-h2" className="text-center text-[20px] italic tracking-[8px] mt-8 font-libre text-[var(--color-secondary)] mb-[32px]">
+              Where Every Corner Reveals a Treasure
+            </p>
+            <div 
+              id="card-container" 
+              className="flex flex-wrap items-left justify-evenly w-full h-fit px-[10vw] gap-y-10">
+                
+                <ProductCard service="New Jewellery" image="/service-battery-change.jpeg"></ProductCard>
+                <ProductCard service="Second Hand Jewellery" image="/service-watch-repair.jpeg"></ProductCard>
+                <ProductCard service="Second Hand Wrist Watches" image="/service-watch-cleaning.jpeg"></ProductCard>
+                <ProductCard service="Second Hand Pocket Watches" image="/service-jewellery-repair.jpeg"></ProductCard>
+                <ProductCard service="Portuguese Hand Made Jewels (Silver & Gold)" image="/service-jewellery-cleaning.jpg"></ProductCard>
+                <ProductCard service="Jewelery Sizing Adjustment" image="/service-jeweller-sizing.jpeg"></ProductCard>
+                <ProductCard service="Stone Setting" image="/service-stone-settings.jpeg"></ProductCard>
+                <ProductCard service="Engraving" image="/service-engraving.jpeg"></ProductCard>
+                <ProductCard service="Bath Plating (Gold and Silver)" image="/service-bath.jpeg"></ProductCard>
+                <ProductCard service="Scratch Removal (Watches and Jewelery)" image="/service-scratch-removal.jpeg"></ProductCard>
+                <ProductCard service="Custom Jewelery (to order)" image="/service-custom-jewellery.jpeg"></ProductCard>
+            </div>
+          </div>
+        </div>
+      </section>
 
+      {/* HIGHLIGHTS */}
+      <section id="highlights-section" className="w-screen h-fit text-white bg-black relative">
+         <h3 className="font-libre text-6xl text-center mb-28 self-center">Boutique Highlights</h3>
+            <p id="hero-h2" className="text-center text-[20px] italic tracking-[8px] mt-8 font-libre text-[var(--color-secondary)] mb-[32px]">
+              Exceptional Pieces - For Exceptional People
+            </p>
+            <p className="text-center font-caudex text-4xl">More exceptional treasures coming soon...</p>
+      </section>
 
+      {/* CONTACT */}
+      <section id="contact-section" className="w-screen min-h-screen h-fit text-black bg-white relative">
 
+ <div id="positioner-div" className="w-full flex ">
 
+          <div id="left-positioner-div" className=" min-w-[50vw] h-fit flex flex-col justify-center items-center">
+            <div id="wrapper" className="bg-red-500 px-[30%]">
+              <h3 className="text-6xl text-center mb-[32px]">Get it Touch</h3>
+               <div className="">
+                 <p className="text-center text-[20px] italic tracking-[8px] font-libre text-black my-[32px]">
+                  We’d Love to Hear <br /> From You
+                </p>
+                <p className="text-4xl font-caudex text-center">Feel Free to Email the owner through our contact form on the right, or by contacting at: </p>
+                <p
+                className="text-4xl font-caudex mb-[32px] border-b border-black py-[24px] flex flex-col justify-center items-center text-center">
+                jorge.albufeira55@gmail.com</p>
+                <p className="text-4xl font-caudex text-center">For any further assistance, feel free to directly call the owner at: </p>
+                <p 
+                className="text-4xl font-caudex mb-[32px] border-b border-black py-[24px] flex flex-col justify-center items-center text-center">
+                  (+351) 914824244</p>
+               </div>
+            </div>
+          </div>
 
+          <div id="right-positioner-div" className="bg-blue-500 h-fit w-full flex items-center justify-center flex-col">
+               <p className="text-center text-[20px] italic tracking-[8px] font-libre text-black my-[32px]">
+                  Email Us Below
+                </p>
 
+                <form className="flex flex-col w-full px-[20%] h-fit gap-4" action="">
+                  <label htmlFor="topic">Topic</label>
+                  <input id="topic" type="text" placeholder="Topic of Contact (ex; Request Sizing Adjustment for Wedding Rings)" required/>
+                  
+                  <label htmlFor="name">Name</label>
+                  <input id="name" type="text" placeholder="Your Full Name" required/>
+                  
+                  <div className="flex">
+                    <div>
+                      <label htmlFor="email">Email</label>
+                      <input id="email" type="email" placeholder="Your Email" required/>
+                    </div>
+                    <div>
+                      <label htmlFor="phone">Phone (Optional)</label>
+                      <input id="phone" type="phone" placeholder="Your Phone Number (Optional)" />
+                    </div>
+                  </div>
+                  
+                  <label htmlFor="message">Message</label>
+                  <textarea id="message" name="message"  placeholder="Your message here..."></textarea>
+                </form>
+                
+          </div>
 
+        </div>
+        
+      </section>
+            
+      <footer className="bg-[#313131] relative">
+        <Image 
+          src={"/logo-white.png"} 
+          width={400} 
+          height={400} 
+          alt="Logo Image"
+          className="p-16 ml-32"
+          onClick={() => {scrollToTop()}}>
+          
+
+        </Image>
+        <p className="absolute bottom-16 right-32 text-3xl">Joalharia Cavalinho 2025, All Rights Reserved</p>
+      </footer>
 
     </>
   )
