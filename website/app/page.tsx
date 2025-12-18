@@ -105,7 +105,7 @@ export default function Home() {
         <div id="positioner-div" className=" w-full h-auto flex">
 
           <div id="right-positioner-div" className=" h-[100%] w-[50vw] max-w-[50vw] flex justify-center flex-col">
-            <div className="w-full h-[600px] relative">
+            <div className="w-full h-[450px] relative">
               <Image
                 src="/watches.webp"
                 alt="Watches"
@@ -169,7 +169,7 @@ export default function Home() {
 
             
             <div id="left-positioner-div" className=" h-[100%] w-[50vw] max-w-[50vw] flex justify-center flex-col">
-              <div className="w-full h-[600px]  relative">
+              <div className="w-full h-[450px]  relative">
                 <Image
                   src="/shop-outside.webp"
                   alt="Watches"
@@ -188,7 +188,7 @@ export default function Home() {
 
             
             <div id="left-positioner-div" className=" h-[100%] w-[50vw] max-w-[50vw] flex justify-center flex-col">
-              <div className="w-full h-[600px] relative">
+              <div className="w-full h-[450px] relative">
                 <Image
                   src="/vitrine.webp"
                   alt="Watches"
@@ -224,10 +224,10 @@ export default function Home() {
                 <Image
                   src="/jorge-matias.webp"
                   alt="Watches"
-                  width={800}
-                  height={800}
+                  width={600}
+                  height={600}
                   // sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  className="object-fit float-right ml-24 mb-24 relative left-64"
+                  className="object-fit float-right mr-96 ml-24 mb-24 relative left-64"
                   />
               <h3 className="font-libre text-6xl text-center mb-28 self-center">The Man Behind the <br /> Counter</h3>
               <p id="hero-h2" className="text-center text-[20px] italic tracking-[8px] mt-8 font-libre text-[var(--color-secondary)] mb-[32px]">
