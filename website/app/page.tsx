@@ -295,17 +295,12 @@ export default function Home() {
               id="card-container" 
               className="flex flex-wrap items-left justify-evenly w-full h-fit px-[10vw] gap-y-10">
                 
-                <ProductCard service="New Jewellery" image="/service-battery-change.jpeg"></ProductCard>
-                <ProductCard service="Second Hand Jewellery" image="/service-watch-repair.jpeg"></ProductCard>
-                <ProductCard service="Second Hand Wrist Watches" image="/service-watch-cleaning.jpeg"></ProductCard>
-                <ProductCard service="Second Hand Pocket Watches" image="/service-jewellery-repair.jpeg"></ProductCard>
-                <ProductCard service="Portuguese Hand Made Jewels (Silver & Gold)" image="/service-jewellery-cleaning.jpg"></ProductCard>
-                <ProductCard service="Jewelery Sizing Adjustment" image="/service-jeweller-sizing.jpeg"></ProductCard>
-                <ProductCard service="Stone Setting" image="/service-stone-settings.jpeg"></ProductCard>
-                <ProductCard service="Engraving" image="/service-engraving.jpeg"></ProductCard>
-                <ProductCard service="Bath Plating (Gold and Silver)" image="/service-bath.jpeg"></ProductCard>
-                <ProductCard service="Scratch Removal (Watches and Jewelery)" image="/service-scratch-removal.jpeg"></ProductCard>
-                <ProductCard service="Custom Jewelery (to order)" image="/service-custom-jewellery.jpeg"></ProductCard>
+                <ProductCard service="Brand New Jewellery" image="/product-new-jewellery.jpeg"></ProductCard>
+                <ProductCard service="Second Hand Jewellery" image="/product-second-hand-jewellery.jpeg"></ProductCard>
+                <ProductCard service="Brand New Wrist Watches" image="/product-brand-new-wrist-watch.jpeg"></ProductCard>
+                <ProductCard service="Second Hand Wrist Watches" image="/product-second-hand-wrist-watch.jpeg"></ProductCard>
+                <ProductCard service="Second Hand Pocket Watches" image="/product-second-hand-pocket-watch.jpeg"></ProductCard>
+                <ProductCard service="Portuguese Hand Made Jewels (Silver & Gold)" image="/product-portuguese-hand-made.jpeg"></ProductCard>
             </div>
           </div>
         </div>
