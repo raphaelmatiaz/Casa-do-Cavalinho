@@ -339,7 +339,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div id="right-positioner-div" className="bg-blue-500 h-fit w-full flex items-center justify-center flex-col">
+          <div id="right-positioner-div" className=" h-fit w-full flex items-center justify-center flex-col">
                {/* <p className="text-center text-[20px] italic tracking-[8px] font-libre text-black my-[32px]">
                   Email Us Below
                 </p>
