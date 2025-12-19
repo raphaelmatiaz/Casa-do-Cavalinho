@@ -340,32 +340,7 @@ export default function Home() {
           </div>
 
           <div id="right-positioner-div" className=" h-fit w-full flex items-center justify-center flex-col">
-               {/* <p className="text-center text-[20px] italic tracking-[8px] font-libre text-black my-[32px]">
-                  Email Us Below
-                </p>
-
-                <form className="flex flex-col w-full px-[20%] h-fit gap-4" action="">
-                  <label htmlFor="topic">Topic</label>
-                  <input id="topic" type="text" placeholder="Topic of Contact (ex; Request Sizing Adjustment for Wedding Rings)" required/>
-                  
-                  <label htmlFor="name">Name</label>
-                  <input id="name" type="text" placeholder="Your Full Name" required/>
-                  
-                  <div className="flex">
-                    <div>
-                      <label htmlFor="email">Email</label>
-                      <input id="email" type="email" placeholder="Your Email" required/>
-                    </div>
-                    <div>
-                      <label htmlFor="phone">Phone (Optional)</label>
-                      <input id="phone" type="phone" placeholder="Your Phone Number (Optional)" />
-                    </div>
-                  </div>
-                  
-                  <label htmlFor="message">Message</label>
-                  <textarea id="message" name="message"  placeholder="Your message here..."></textarea>
-                </form> */}
-
+               
                 <ContactForm></ContactForm>
                 
           </div>
