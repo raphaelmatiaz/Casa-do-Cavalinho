@@ -321,7 +321,7 @@ export default function Home() {
         <div id="positioner-div" className="w-full flex ">
 
           <div id="left-positioner-div" className=" min-w-[50vw] h-fit flex flex-col justify-center items-center">
-            <div id="wrapper" className="bg-red-500 px-[30%]">
+            <div id="wrapper" className="px-[30%]">
               <h3 className="text-6xl text-center mb-[32px]">Get it Touch</h3>
                <div className="">
                  <p className="text-center text-[20px] italic tracking-[8px] font-libre text-black my-[32px]">

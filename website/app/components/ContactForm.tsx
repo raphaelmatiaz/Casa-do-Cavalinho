@@ -70,8 +70,8 @@ export default function ContactForm() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-amber-50 to-orange-50 py-12 px-4">
-      <div className="max-w-2xl mx-auto bg-white rounded-2xl shadow-xl p-8">
+    <div className=" bg-gradient-to-br mr-8 px-4">
+      <div className="max-w-2xl mx-auto p-8">
         <h2 className="text-center text-2xl italic tracking-widest font-serif text-gray-800 mb-8">
           Contact Form
         </h2>
