@@ -106,39 +106,53 @@ export default function Home() {
       </section>
 
     {/* SHOP LOCATION */}
-      <section id="location-section" className="w-screen h-fit min-h-screen bg-sky-700  relative ">
+      <section
+        id="location-section"
+        className="relative min-h-screen w-screen bg-sky-700 !pb-16 sm:!pb-20 lg:!pb-28"
+      >
+        <div
+          id="positioner-div"
+          className="mx-auto flex w-full max-w-[1440px] flex-col gap-10 px-4 sm:px-8 2xl:flex-row 2xl:items-stretch 2xl:gap-0 2xl:px-0"
+        >
+          <div
+            id="left-positioner-div"
+            className="flex w-full flex-col items-center justify-center 2xl:min-h-[450px] 2xl:w-1/2 2xl:px-10"
+          >
+            <h3 className="mb-8 text-center font-libre text-6xl leading-tight sm:text-7xl md:text-7xl lg:text-[64px]">
+              Looking for our <br className="hidden sm:block" /> Shop?
+            </h3>
 
-        <div id="positioner-div" className="w-full flex ">
-
-          <div id="left-positioner-div" className=" min-w-[50vw] flex flex-col justify-center items-center">
-            <h3 className="text-6xl text-center mb-[32px]">Looking for our <br /> Shop?</h3>
-
-             <div className="">
-               <p id="hero-h2" className="text-center text-[20px] italic tracking-[8px] font-libre text-white mt-[32px]">
+            <div className="w-full max-w-[560px]">
+              <p
+                id="hero-h2"
+                className="mt-4 px-2 text-center text-base italic tracking-[3px] font-libre text-white sm:text-lg sm:tracking-[5px] md:mt-8 md:text-2xl md:tracking-[7px] lg:text-[20px] lg:tracking-[8px]"
+              >
                 We are Located at:
               </p>
-              <p 
-              className="text-4xl font-caudex mb-[32px] border-b border-white py-[24px] flex flex-col justify-center items-center text-center">Rua João de Deus 24 A <br />
-              8200-142 Albufeira, <br /> Portugal </p>
-              <GetDirectionsButton></GetDirectionsButton>
-             </div>
+              <p className="mb-8 mt-4 border-b border-white/80 py-6 text-center text-2xl leading-relaxed font-caudex sm:text-3xl lg:text-4xl">
+                Rua João de Deus 24 A <br />
+                8200-142 Albufeira, <br /> Portugal
+              </p>
+              <div className="flex justify-center">
+                <GetDirectionsButton></GetDirectionsButton>
+              </div>
+            </div>
           </div>
 
-          <div id="right-positioner-div" className="h-[450px] w-full flex items-center justify-center flex-col">
-            <iframe 
-              src="https://www.google.com/maps/embed?pb=!4v1763936381453!6m8!1m7!1sg9dnYX8yMmJNt1DQrpW1EA!2m2!1d37.08726626707691!2d-8.253348173524856!3f203.83644824871865!4f-1.5222311703891336!5f0.7820865974627469" 
-              // width="750" 
-              // height="500" 
-              style={{border:0}}
+          <div
+            id="right-positioner-div"
+            className="h-[320px] w-full overflow-hidden rounded-2xl shadow-2xl sm:h-[420px] 2xl:h-auto 2xl:min-h-[450px] 2xl:w-1/2 2xl:rounded-none 2xl:shadow-none"
+          >
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!4v1763936381453!6m8!1m7!1sg9dnYX8yMmJNt1DQrpW1EA!2m2!1d37.08726626707691!2d-8.253348173524856!3f203.83644824871865!4f-1.5222311703891336!5f0.7820865974627469"
+              style={{ border: 0 }}
               allowFullScreen
-              loading="lazy" 
+              loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              className="w-full h-full">
-            </iframe>
+              className="h-full w-full"
+            ></iframe>
           </div>
-
         </div>
-        
       </section>
 
       {/* TIMETABLE */}
@@ -275,7 +289,7 @@ export default function Home() {
               <p id="hero-h2" className="text-center text-[20px] italic tracking-[8px] mt-8 font-libre text-[var(--color-secondary)] mb-[32px]">
                 Jorge Cabrita Matias
               </p>
-                <p className="mb-16">At the heart of Joalharia Cavalinho is Jorge Cabrita Matias, a Portuguese craftsman, artisan and artist, who's life has been shaped by artistry, precision, and genuine human connection. </p>
+                <p className="mb-16">At the heart of Joalharia Cavalinho is Jorge Cabrita Matias, a Portuguese craftsman, artisan and artist, who’s life has been shaped by artistry, precision, and genuine human connection. </p>
                 <p className="mb-16">Jorge began his artisan journey in his early twenties in Belgium, where he founded the renowned boutique La Boucle d’Art, just steps from Brussels’ iconic Grand Place.</p>
                 <p className="mb-16">There, he learned to master multiple disciplines—salesmanship, craftsmanship, clockworking, goldsmithing, and artistic design — building a reputation for excellence and authenticity.</p>
                 <p className="mb-16">Decades later, his path led him back to his roots in the Algarve, where he established Joalharia Cavalinho in Albufeira. For over 30 years, the shop has flourished under his steady hand, becoming a trusted, beloved presence in the community.</p>

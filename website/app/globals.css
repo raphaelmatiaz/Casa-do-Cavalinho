@@ -38,6 +38,15 @@ section {
   /* pt-[325px] pb-[184px] */
   padding-top: 24rem;
   padding-bottom: 18rem;
+  padding-left: 2.8rem;
+  padding-right: 2.8rem;
+}
+
+@media (min-width: 640px) {
+  section {
+    padding-left: 0;
+    padding-right: 0;
+  }
 }
 
 /* label {
