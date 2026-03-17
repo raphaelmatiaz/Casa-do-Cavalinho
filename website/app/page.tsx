@@ -29,46 +29,78 @@ export default function Home() {
     <>
       <Navbar></Navbar>
         
-      <section id="hero-section" className="bg-black relative w-[100vw] h-[100vh] flex flex-col justify-center">
+      <section
+        id="hero-section"
+        className="relative flex min-h-[100svh] w-[100vw] flex-col justify-center bg-black !pt-0 !pb-0"
+      >
+        <video
+          src="/videos/cavalinho-hero.mp4"
+          loop
+          autoPlay
+          muted
+          className="absolute left-0 top-0 h-full w-full object-cover opacity-25 grayscale-25"
+        ></video>
 
-          <video
-            src="/videos/cavalinho-hero.mp4"
-            loop
-            autoPlay
-            muted
-            className="absolute top-0 left-0 w-full h-full object-cover opacity-25 grayscale-25">
-          </video>
-
-        <div id="hero-presentation-wrapper" className="relative z-10 mb-[10vh] mt-[140px] text-shadow-lg font-caudex">
-          <p id="hero-h1" className="text-center text-[64px]">
-            The <em className="text-[var(--color-secondary)] not-italic">Goldsmith’s</em> Touch, and <br />
-            the <em className="text-[var(--color-primary)] not-italic">Watchmaker’s</em> Mind
+        <div
+          id="hero-presentation-wrapper"
+          className="relative z-10 mb-16 mt-24 px-4 text-shadow-lg font-caudex sm:mb-20 sm:px-8 md:mb-[10vh] md:mt-[140px]"
+        >
+          <p
+            id="hero-h1"
+            className="text-center text-6xl leading-tight sm:text-7xl md:text-7xl lg:text-[64px]"
+          >
+            The{" "}
+            <em className="text-[var(--color-secondary)] not-italic">
+              Goldsmith’s
+            </em>
+            <br className="sm:hidden" />{" "}
+            Touch, and
+            <br className="sm:hidden" /> <br className="hidden sm:inline" />
+            the{" "}
+            <em className="text-[var(--color-primary)] not-italic">
+              Watchmaker’s
+            </em>
+            <br className="sm:hidden" />{" "}
+            Mind
           </p>
-          <p id="hero-h2" className="text-center text-[20px] italic tracking-[8px] mt-8 font-libre">
+          <p
+            id="hero-h2"
+            className="mt-4 px-2 text-center text-base italic tracking-[3px] font-libre sm:text-lg sm:tracking-[5px] md:mt-8 md:text-2xl md:tracking-[7px] lg:text-[20px] lg:tracking-[8px]"
+          >
             Jewelery — Watches — Repairs — Commissions
           </p>
-          <div id="hero-buttons-wrapper" className="flex justify-center mt-16 gap-32 ">
+          <div
+            id="hero-buttons-wrapper"
+            className="mt-12 flex flex-col items-center justify-center gap-4 px-4 sm:mt-10 sm:w-full sm:flex-col sm:gap-6 md:mt-12 min-[870px]:flex-row min-[870px]:gap-10 lg:mt-16 lg:gap-16"
+          >
             <button
-               className="bg-[var(--color-secondary)] px-32 min-w-[380px] py-5 rounded-full text-3xl text-white shadow-2xl"
-               onClick={() => {
+              className="w-full min-w-0 max-w-[360px] rounded-full bg-[var(--color-secondary)] px-10 py-4 text-2xl text-white shadow-2xl sm:w-full sm:max-w-[420px] sm:px-14 sm:py-4 sm:text-2xl md:w-auto md:min-w-[380px] md:max-w-none md:px-16 md:py-5 md:text-3xl lg:min-w-[380px] lg:px-20 lg:py-5 lg:text-2xl xl:px-32 xl:text-3xl"
+              onClick={() => {
                 scrollToShopLocationSection();
-               }}
-               >
-               Shop Location
+              }}
+            >
+              Shop Location
             </button>
-            <button 
-              className="bg-[var(--color-primary)] px-32 py-5 min-w-[380px] radius-4 rounded-full text-3xl text-white shadow-2xl"
+            <button
+              className="radius-4 w-full min-w-0 max-w-[360px] rounded-full bg-[var(--color-primary)] px-10 py-4 text-2xl text-white shadow-2xl sm:w-full sm:max-w-[420px] sm:px-14 sm:py-4 sm:text-2xl md:w-auto md:min-w-[380px] md:max-w-none md:px-16 md:py-5 md:text-3xl lg:min-w-[380px] lg:px-20 lg:py-5 lg:text-2xl xl:px-32 xl:text-3xl"
               onClick={() => {
                 scrollToServicesSection();
               }}
-              >Our Services</button>
+            >
+              Our Services
+            </button>
           </div>
         </div>
 
-        <div id="scroll-icon-positioner" className="absolute bottom-0 w-screen flex items-center justify-center z-10">
+        <div
+          id="scroll-icon-positioner"
+          className="absolute bottom-2 z-10 flex w-screen items-center justify-center md:bottom-0"
+        >
           <div className="flex flex-col items-center">
-            <p className="text-sm italic tracking-[10px] relative left-[4px]">scroll</p>
-            <div className="h-[48px] w-[1px] bg-white mt-[4px]"></div>
+            <p className="relative left-[4px] text-xs italic tracking-[4px] md:text-sm md:tracking-[10px]">
+              scroll
+            </p>
+            <div className="mt-[4px] h-8 w-[1px] bg-white md:h-[48px]"></div>
           </div>
         </div>
       </section>
