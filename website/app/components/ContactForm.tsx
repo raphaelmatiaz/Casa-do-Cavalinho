@@ -52,8 +52,8 @@ export default function ContactForm() {
     }
   };
 
-  const labelClass = "block text-base sm:text-lg lg:text-xl font-medium text-gray-800 mb-2";
-  const inputClass = "w-full px-4 py-3 text-base sm:text-lg bg-white text-black placeholder-gray-400 border border-gray-300 rounded-lg outline-none transition focus:border-[var(--color-primary)] focus:ring-2 focus:ring-[var(--color-primary)]";
+  const labelClass = "block text-base sm:text-2xl lg:text-2xl font-medium text-gray-800 mb-2";
+  const inputClass = "w-full px-4 py-3 text-base sm:text-2xl bg-white text-black placeholder-gray-700 border border-gray-300 rounded-lg outline-none transition focus:border-[var(--color-primary)] focus:ring-2 focus:ring-[var(--color-primary)]";
 
   return (
     <div className="w-full">
@@ -135,8 +135,8 @@ export default function ContactForm() {
             type="button"
             onClick={sendEmail}
             disabled={isSubmitting}
-            className="w-full sm:w-auto px-10 py-3 rounded-full font-medium text-base sm:text-lg text-white transition-all duration-200
-              bg-[var(--color-secondary)] hover:bg-[var(--color-primary)]
+            className="w-full sm:w-auto px-10 py-3 rounded-full font-medium text-base sm:text-2xl text-white transition-all duration-200
+              bg-[var(--color-primary)] hover:bg-[var(--color-primary)]
               disabled:opacity-50 disabled:cursor-not-allowed"
           >
             {isSubmitting ? "Sending..." : "Send Message"}

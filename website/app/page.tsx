@@ -127,7 +127,7 @@ export default function Home() {
         
       <section
         id="hero-section"
-        className="relative flex min-h-[100svh] w-[100vw] flex-col justify-center bg-black !pt-0 !pb-0"
+        className="relative flex min-h-[100svh] w-full flex-col justify-center bg-black !pt-0 !pb-0"
       >
         <video
           src="/videos/cavalinho-hero.mp4"
@@ -204,7 +204,7 @@ export default function Home() {
     {/* SHOP LOCATION */}
       <section
         id="location-section"
-        className="relative min-h-screen w-screen bg-sky-700 !pb-16 sm:!pb-20 lg:!pb-28"
+        className="relative min-h-screen w-full bg-sky-700 !pb-16 sm:!pb-20 lg:!pb-28"
       >
         <div
           id="positioner-div"
@@ -252,7 +252,7 @@ export default function Home() {
       </section>
 
       {/* TIMETABLE */}
-      <section id="timetable-section" className="relative min-h-screen w-screen bg-white text-black">
+      <section id="timetable-section" className="relative min-h-screen w-full bg-white text-black">
         
         <div id="positioner-div" className="mx-auto flex w-full max-w-[1440px] flex-col gap-8 px-0 lg:flex-row lg:items-stretch lg:gap-0">
 
@@ -338,7 +338,7 @@ export default function Home() {
 
 
 {/* About Us */}
-<section id="about-section" className="w-screen h-auto text-black bg-gray-300 relative">
+<section id="about-section" className="w-full h-auto text-black bg-gray-300 relative">
 
   {/* Block 1: Text left, Image right */}
   <div id="block-1" className="w-full h-auto flex flex-col lg:flex-row">
@@ -427,7 +427,7 @@ export default function Home() {
 </section>
 
 {/* MEET THE OWNER */}
-<section id="owner-section" className="w-screen min-h-screen text-black bg-white relative">
+<section id="owner-section" className="w-full min-h-screen text-black bg-white relative">
 
   <div className="w-full max-w-[1440px] mx-auto px-6 py-12 sm:px-10 sm:py-16 md:px-16 md:py-20 lg:px-24 xl:px-32">
 
@@ -510,7 +510,7 @@ export default function Home() {
 
 </section>
 {/* SERVICES */}
-<section id="services-section" className="w-screen min-h-screen text-black bg-[#E2E2E2] relative">
+<section id="services-section" className="w-full min-h-screen text-black bg-[#E2E2E2] relative">
   <div className="w-full h-fit flex">
     <div className="flex flex-col items-center justify-center w-full px-6 py-12 sm:px-10 sm:py-16 md:px-12 md:py-20 lg:px-16">
 
@@ -596,13 +596,13 @@ export default function Home() {
   <div className="w-full flex flex-col lg:flex-row">
 
     {/* Left: Contact Info */}
-    <div className="flex-1 flex flex-col justify-center items-center px-8 py-12 sm:px-14 sm:py-16 md:px-20 md:py-20 lg:px-16 xl:px-24">
+    <div className="bg-blue-600 text-white flex-1 flex flex-col justify-center items-center px-8 py-12 sm:px-14 sm:py-16 md:px-20 md:py-20 lg:px-16 xl:px-24">
 
       <h3 className="font-libre text-4xl sm:text-5xl lg:text-6xl text-center mb-6 sm:mb-8 lg:mb-10">
         Get in Touch
       </h3>
 
-      <p className="text-center text-sm sm:text-base lg:text-[20px] italic tracking-[4px] sm:tracking-[6px] lg:tracking-[8px] font-libre text-black mb-8 sm:mb-10 lg:mb-12">
+      <p className="text-center text-sm sm:text-base lg:text-[20px] italic tracking-[4px] sm:tracking-[6px] lg:tracking-[8px] font-libre mb-8 sm:mb-10 lg:mb-12">
         We'd Love to Hear <br /> From You
       </p>
 
@@ -610,20 +610,20 @@ export default function Home() {
         Feel free to email the owner through our contact form, or directly at:
       </p>
       <p className="text-xl sm:text-2xl xl:text-3xl font-caudex text-center border-b border-black py-5 mb-8 sm:mb-10 w-full">
-        jorge.albufeira55@gmail.com
+        &#10146; jorge.albufeira55@gmail.com
       </p>
 
       <p className="text-xl sm:text-2xl xl:text-3xl font-caudex text-center mb-4">
         For any further assistance, feel free to call the owner directly at:
       </p>
       <p className="text-xl sm:text-2xl xl:text-3xl font-caudex text-center border-b border-black py-5 w-full">
-        (+351) 914 824 244
+        &#10146; (+351) 914 824 244
       </p>
 
     </div>
 
     {/* Right: Contact Form */}
-    <div className="flex-1 flex items-center justify-center px-8 py-12 sm:px-14 sm:py-16 md:px-20 lg:px-16 xl:px-24 bg-gray-50">
+    <div className="flex-1 flex items-center justify-center px-8 py-12 sm:px-14 sm:py-16 md:px-20 lg:px-16 xl:px-24 bg-amber-400">
       <ContactForm />
     </div>
 
