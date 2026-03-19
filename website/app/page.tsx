@@ -426,37 +426,89 @@ export default function Home() {
 
 </section>
 
-      {/* MEET THE OWNER */}
-      <section id="owner-section" className="w-screen min-h-screen text-black bg-white relative">
+{/* MEET THE OWNER */}
+<section id="owner-section" className="w-screen min-h-screen text-black bg-white relative">
 
-         <div id="positioner-div" className="w-full h-auto flex pb-[184px]">
+  <div className="w-full max-w-[1440px] mx-auto px-6 py-12 sm:px-10 sm:py-16 md:px-16 md:py-20 lg:px-24 xl:px-32">
 
-          <div id="right-positioner-div" className="h-[100%] min-w-[50vh] flex items-center justify-center flex-col px-[18rem]">
+    <h3 className="font-libre text-4xl sm:text-5xl lg:text-6xl text-center mb-6 sm:mb-10 lg:mb-16">
+      The Man Behind the Counter
+    </h3>
+    <p className="text-center text-sm sm:text-base lg:text-[20px] italic tracking-[4px] sm:tracking-[6px] lg:tracking-[8px] font-libre text-[var(--color-secondary)] mb-8 sm:mb-12 lg:mb-16">
+      Jorge Cabrita Matias
+    </p>
 
-              <article className="text-4xl font-thin font-caudex">
-                <Image
-                  src="/jorge-matias.webp"
-                  alt="Watches"
-                  width={600}
-                  height={600}
-                  // sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  className="object-fit float-right mr-96 ml-24 mb-24 relative left-64"
-                  />
-              <h3 className="font-libre text-6xl text-center mb-28 self-center">The Man Behind the <br /> Counter</h3>
-              <p id="hero-h2" className="text-center text-[20px] italic tracking-[8px] mt-8 font-libre text-[var(--color-secondary)] mb-[32px]">
-                Jorge Cabrita Matias
-              </p>
-                <p className="mb-16">At the heart of Joalharia Cavalinho is Jorge Cabrita Matias, a Portuguese craftsman, artisan and artist, who’s life has been shaped by artistry, precision, and genuine human connection. </p>
-                <p className="mb-16">Jorge began his artisan journey in his early twenties in Belgium, where he founded the renowned boutique La Boucle d’Art, just steps from Brussels’ iconic Grand Place.</p>
-                <p className="mb-16">There, he learned to master multiple disciplines—salesmanship, craftsmanship, clockworking, goldsmithing, and artistic design — building a reputation for excellence and authenticity.</p>
-                <p className="mb-16">Decades later, his path led him back to his roots in the Algarve, where he established Joalharia Cavalinho in Albufeira. For over 30 years, the shop has flourished under his steady hand, becoming a trusted, beloved presence in the community.</p>
-                <p className="mb-16">Jorge is more than a jeweler or a watchmaker—he is a passionate storyteller, an artisan with an eye for detail, and a warm, welcoming guide who takes time to understand every client’s needs and desires. His dedication, experience, and heartfelt approach are the soul of the shop, and the reason so many customers return year after year.</p>
-                {/* <img src="/jorge-matias.webp" className="float-right" alt="" /> */}
-              </article>
+    {/* Mobile only: full-width banner image */}
+    <div className="relative w-full h-[280px] sm:hidden mb-8">
+      <Image
+        src="/jorge-matias.webp"
+        alt="Jorge Cabrita Matias, owner of Joalharia Cavalinho"
+        fill
+        sizes="100vw"
+        className="object-cover object-top"
+      />
+    </div>
 
-            </div>
-         </div>
-      </section>
+    {/* Article with float image on sm–md, side column on lg+ */}
+    <div className="flex flex-col lg:flex-row lg:gap-16 xl:gap-24">
+
+      {/* Desktop sidebar image */}
+      <div className="hidden lg:block lg:flex-shrink-0">
+        <Image
+          src="/jorge-matias.webp"
+          alt="Jorge Cabrita Matias, owner of Joalharia Cavalinho"
+          width={420}
+          height={500}
+          sizes="420px"
+          className="object-cover"
+        />
+      </div>
+
+      {/* Text — float image sits inside here for sm/md */}
+      <article className="text-xl sm:text-2xl lg:text-3xl xl:text-3xl font-thin font-caudex">
+
+        {/* Tablet float image: square, top-right, text wraps around it */}
+        <div className="hidden sm:block lg:hidden float-right ml-8 mb-6 w-[240px] h-[240px] md:w-[300px] md:h-[300px] relative flex-shrink-0">
+          <Image
+            src="/jorge-matias.webp"
+            alt="Jorge Cabrita Matias, owner of Joalharia Cavalinho"
+            fill
+            sizes="(max-width: 768px) 240px, 300px"
+            className="object-cover object-top"
+          />
+        </div>
+
+        <p className="mb-8 sm:mb-10 lg:mb-12">
+          At the heart of Joalharia Cavalinho is Jorge Cabrita Matias, a Portuguese craftsman,
+          artisan and artist, whose life has been shaped by artistry, precision, and genuine human
+          connection.
+        </p>
+        <p className="mb-8 sm:mb-10 lg:mb-12">
+          Jorge began his artisan journey in his early twenties in Belgium, where he founded the
+          renowned boutique La Boucle d'Art, just steps from Brussels' iconic Grand Place.
+        </p>
+        <p className="mb-8 sm:mb-10 lg:mb-12">
+          There, he learned to master multiple disciplines—salesmanship, craftsmanship,
+          clockworking, goldsmithing, and artistic design—building a reputation for excellence
+          and authenticity.
+        </p>
+        <p className="mb-8 sm:mb-10 lg:mb-12">
+          Decades later, his path led him back to his roots in the Algarve, where he established
+          Joalharia Cavalinho in Albufeira. For over 30 years, the shop has flourished under his
+          steady hand, becoming a trusted, beloved presence in the community.
+        </p>
+        <p>
+          Jorge is more than a jeweler or a watchmaker—he is a passionate storyteller, an artisan
+          with an eye for detail, and a warm, welcoming guide who takes time to understand every
+          client's needs and desires. His dedication, experience, and heartfelt approach are the
+          soul of the shop, and the reason so many customers return year after year.
+        </p>
+      </article>
+
+    </div>
+  </div>
+
+</section>
 
       {/* SERVICES */}
       <section id="services-section" className="w-screen min-h-screen text-black bg-[#E2E2E2] relative">
