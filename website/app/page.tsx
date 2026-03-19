@@ -577,14 +577,18 @@ export default function Home() {
   </div>
 </section>
 
-      {/* HIGHLIGHTS */}
-      <section id="highlights-section" className="w-screen h-fit text-white bg-black relative">
-         <h3 className="font-libre text-6xl text-center mb-28 self-center">Boutique Highlights</h3>
-            <p id="hero-h2" className="text-center text-[20px] italic tracking-[8px] mt-8 font-libre text-[var(--color-secondary)] mb-[32px]">
-              Exceptional Pieces - For Exceptional People
-            </p>
-            <p className="text-center font-caudex text-4xl">More exceptional treasures coming soon...</p>
-      </section>
+{/* HIGHLIGHTS */}
+{/* <section id="highlights-section" className="w-screen h-fit text-white bg-black relative px-6 py-12 sm:px-10 sm:py-16 md:px-16 md:py-20 lg:px-24">
+  <h3 className="font-libre text-4xl sm:text-5xl lg:text-6xl text-center mb-6 sm:mb-10 lg:mb-16">
+    Boutique Highlights
+  </h3>
+  <p className="text-center text-sm sm:text-base lg:text-[20px] italic tracking-[4px] sm:tracking-[6px] lg:tracking-[8px] font-libre text-[var(--color-secondary)] mb-8 sm:mb-10 lg:mb-12">
+    Exceptional Pieces - For Exceptional People
+  </p>
+  <p className="text-center font-caudex text-2xl sm:text-3xl xl:text-3xl">
+    More exceptional treasures coming soon...
+  </p>
+</section> */}
 
       {/* CONTACT */}
       <section id="contact-section" className="w-screen min-h-screen h-fit text-black bg-white relative">
