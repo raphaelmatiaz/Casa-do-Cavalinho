@@ -25,6 +25,102 @@ export default function Home() {
 
   const scrollToTop = () => scrollToSection("hero-section");
 
+  type ShopStatusInfo = {
+    statusLabel: "Open" | "Closed" | "Closing";
+    statusColorClass: string;
+    statusText: string;
+    secondaryText: string;
+    showCallNote: boolean;
+    localDay: string;
+    localTime: string;
+  };
+
+  const getShopStatusInfo = (): ShopStatusInfo => {
+    const formatter = new Intl.DateTimeFormat("en-GB", {
+      timeZone: "Europe/Lisbon",
+      weekday: "long",
+      hour: "2-digit",
+      minute: "2-digit",
+      hour12: false,
+    });
+
+    const parts = formatter.formatToParts(new Date());
+    const day = parts.find((part) => part.type === "weekday")?.value ?? "Monday";
+    const hour = Number(parts.find((part) => part.type === "hour")?.value ?? "0");
+    const minute = Number(parts.find((part) => part.type === "minute")?.value ?? "0");
+    const localTime = `${String(hour).padStart(2, "0")}:${String(minute).padStart(2, "0")}`;
+
+    const currentMinutes = hour * 60 + minute;
+    const openingMinutes = 10 * 60 + 30;
+    const closingWarningMinutes = 13 * 60;
+    const closingMinutes = 13 * 60 + 30;
+
+    const isFriday = day === "Friday";
+    const isSaturday = day === "Saturday";
+    const isSunday = day === "Sunday";
+    const isWeekend = isSaturday || isSunday;
+
+    if (isFriday || isSaturday || (!isWeekend && currentMinutes >= closingMinutes)) {
+      return {
+        statusLabel: "Closed",
+        statusColorClass: "text-red-700",
+        statusText: "Our shop is currently",
+        secondaryText: "We open tomorrow at 10:30am",
+        showCallNote: false,
+        localDay: day,
+        localTime,
+      };
+    }
+
+    if (!isWeekend && currentMinutes >= closingWarningMinutes && currentMinutes < closingMinutes) {
+      return {
+        statusLabel: "Closing",
+        statusColorClass: "text-orange-500",
+        statusText: "Our shop is currently",
+        secondaryText: "We close at 1:30pm",
+        showCallNote: false,
+        localDay: day,
+        localTime,
+      };
+    }
+
+    if (!isWeekend && currentMinutes >= openingMinutes && currentMinutes < closingWarningMinutes) {
+      return {
+        statusLabel: "Open",
+        statusColorClass: "text-green-700",
+        statusText: "Our shop is currently:",
+        secondaryText: "",
+        showCallNote: true,
+        localDay: day,
+        localTime,
+      };
+    }
+
+    if (isWeekend) {
+      return {
+        statusLabel: "Closed",
+        statusColorClass: "text-red-700",
+        statusText: "Our shop is currently:",
+        secondaryText: "We open tomorrow at 10:30am",
+        showCallNote: false,
+        localDay: day,
+        localTime,
+      };
+    }
+
+    return {
+      statusLabel: "Closed",
+      statusColorClass: "text-red-700",
+      statusText: "Our shop is currently:",
+      secondaryText: "We open today at 10:30am",
+      showCallNote: false,
+      localDay: day,
+      localTime,
+    };
+  };
+
+  const shopStatusInfo = getShopStatusInfo();
+
   return (
     <>
       <Navbar></Navbar>
@@ -156,44 +252,79 @@ export default function Home() {
       </section>
 
       {/* TIMETABLE */}
-      <section id="timetable-section" className="w-screen min-h-screen text-black bg-white relative">
+      <section id="timetable-section" className="relative min-h-screen w-screen bg-white text-black">
         
-        <div id="positioner-div" className=" w-full h-auto flex">
+        <div id="positioner-div" className="mx-auto flex w-full max-w-[1440px] flex-col gap-8 px-0 lg:flex-row lg:items-stretch lg:gap-0">
 
-          <div id="right-positioner-div" className=" h-[100%] w-[50vw] max-w-[50vw] flex justify-center flex-col">
-            <div className="w-full h-[450px] relative">
+          <div id="right-positioner-div" className="w-full lg:w-1/2">
+            <div className="relative h-[280px] w-full sm:h-[360px] lg:h-[450px]">
               <Image
                 src="/watches.webp"
                 alt="Watches"
                 fill
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover"
               />
             </div>
           </div>
 
-          <div id="left-positioner-div" className="h-[100%] w-full max-w-[50vw] flex items-center justify-center flex-col px-[18rem]">
-            <h3 className="text-6xl text-center mb-28 self-center">Timetable</h3>
-            <p id="hero-h2" className="text-center text-[20px] italic tracking-[8px] mt-8 font-libre text-[var(--color-secondary)] mb-[32px]">
-              Openening & Closing Hours
+          <div
+            id="left-positioner-div"
+            className="flex w-full flex-col items-center justify-center px-6 pb-4 sm:px-10 md:px-16 lg:w-1/2 lg:px-12 lg:pb-0 xl:px-20"          >
+            <h3 className="mb-2 mt-8 text-center font-libre text-6xl leading-tight sm:text-7xl md:text-7xl lg:text-[64px]">
+              Timetable
+            </h3>
+            <p
+              id="hero-h2"
+              className="mt-4 mb-8 px-2 text-center text-base italic tracking-[3px] font-libre text-[var(--color-secondary)] sm:text-lg sm:tracking-[5px] md:mt-8 md:text-2xl md:tracking-[7px] lg:text-[20px] lg:tracking-[8px]"
+            >
+              Business Hours & Status
             </p>
 
 
-            <div id="shop-status" className="border-b border-black py-[24px] flex flex-col justify-center items-start w-full">
-              <h4 className="text-3xl mb-[4px]">Status</h4>
-              <p className="font-caudex text-2xl">Our shop is currently <em className="not-italic font-bold text-red-700"> Closed</em></p>
-              <p className="font-caudex text-2xl">We open <em className="not-italic font-bold">tomorrow at 10:30am</em></p>
+            <div
+              id="shop-status"
+              className="flex w-full flex-col items-start justify-center border-b border-black py-5 sm:py-6"
+            >
+              <h4 className="text-2xl sm:text-3xl lg:text-4xl mb-4">Status</h4>
+              <p className="font-caudex text-2xl sm:text-3xl lg:text-3xl">
+                &#10146; {shopStatusInfo.statusText}
+                <em className={`not-italic font-bold ${shopStatusInfo.statusColorClass}`}>
+                  {" "}
+                  {shopStatusInfo.statusLabel}
+                </em>
+              </p>
+              {shopStatusInfo.secondaryText && (
+                <p className="font-caudex text-2xl sm:text-3xl lg:text-3xl">{shopStatusInfo.secondaryText}</p>
+              )}
+              {shopStatusInfo.showCallNote && (
+                <p className="mt-8 p-4 font-caudex text-2xl sm:text-3xl lg:text-2xl bg-gray-300 border-l-4 border-gray-500">
+                  <em className="not-italic font-bold">Note: </em> In rare cases, the shop may be closed even when marked as "Open" on our site. If you are coming from far away, we recommend calling the owner at <em className="not-italic font-bold">(+351) 914 824 244</em> beforehand.
+                </p>
+              )}
+              {/* <p className="mt-2 font-caudex text-2xl text-gray-700 sm:text-3xl lg:text-2xl">
+                Local time in Albufeira: {shopStatusInfo.localDay}, {shopStatusInfo.localTime}
+              </p> */}
             </div>
 
-            <div id="open-closed" className="flex flex-row border-b border-black gap-32 w-full">
-              <div className="py-[24px]">
-                <h4 className="text-3xl mb-[4px]">Open</h4>
-                <p className="font-caudex text-2xl"><em className="not-italic font-bold text-[var(--color-secondary)]">Monday</em> to <em className="not-italic font-bold text-[var(--color-primary)]">Friday</em></p>
-                <p className="font-caudex text-2xl">From <em className="not-italic font-bold">10:30am</em> to  <em className="not-italic font-bold">1:30pm</em></p>
+            <div id="open-closed" className="flex w-full flex-col gap-2 border-b border-black sm:flex-row sm:gap-8 lg:gap-16">
+              <div className="py-5 sm:py-6">
+                <h4 className="text-2xl sm:text-3xl lg:text-4xl mb-4">We're Open:</h4>
+                <p className="font-caudex text-2xl sm:text-3xl lg:text-3xl"> &#10146;
+                  <em className="not-italic text-[var(--color-secondary)] font-bold"> Monday</em> to{" "}
+                  <em className="not-italic text-[var(--color-primary)] font-bold">Friday</em>
+                </p>
+                <p className="font-caudex text-2xl sm:text-3xl lg:text-3xl">
+                  &#10146; From <em className="not-italic font-bold">10:30am</em> to{" "}
+                  <em className="not-italic font-bold">1:30pm</em>
+                </p>
               </div>
-              <div className="py-[24px]">
-                <h4 className="text-3xl mb-[4px]">Closed</h4>
-                <p className="font-caudex text-2xl"><em className="not-italic font-bold">Saturday</em> & <em className="not-italic font-bold">Sunday</em></p>
+              <div className="py-5 sm:py-6">
+                <h4 className="text-2xl sm:text-3xl lg:text-4xl mb-4">We're Closed:</h4>
+                <p className="font-caudex text-2xl sm:text-3xl lg:text-3xl"> &#10146;
+                  <em className="not-italic font-bold"> Saturday</em> &{" "}
+                  <em className="not-italic font-bold">Sunday</em>
+                </p>
               </div>
             </div>
 
