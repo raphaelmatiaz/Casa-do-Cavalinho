@@ -60,7 +60,7 @@ export default function ContactForm() {
       <div className="w-full max-w-2xl mx-auto">
 
         <h2 className="text-center text-2xl sm:text-3xl lg:text-4xl italic tracking-widest font-libre text-gray-800 mb-8 sm:mb-10">
-          Contact Form
+          
         </h2>
 
         <div className="space-y-6 sm:space-y-8">
