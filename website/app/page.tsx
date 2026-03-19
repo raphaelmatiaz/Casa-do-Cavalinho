@@ -337,68 +337,94 @@ export default function Home() {
       </section>
 
 
-      {/* About Us */}
-      <section id="about-section" className="w-screen h-auto min-h-screen text-black bg-gray-300 relative">
+{/* About Us */}
+<section id="about-section" className="w-screen h-auto text-black bg-gray-300 relative">
 
-        <div id="positioner-div" className=" w-full h-auto flex pb-[184px]">
+  {/* Block 1: Text left, Image right */}
+  <div id="block-1" className="w-full h-auto flex flex-col lg:flex-row">
 
+    {/* Text */}
+    <div className="w-full lg:w-1/2 flex items-center justify-center flex-col px-6 py-12 sm:px-10 sm:py-16 md:px-16 md:py-20 lg:px-16 xl:px-24">
+      <h3 className="text-4xl sm:text-5xl lg:text-6xl text-center mb-8 sm:mb-12 lg:mb-16 self-center">
+        About Us
+      </h3>
+      <p
+        id="hero-h2"
+        className="text-center text-sm sm:text-base lg:text-[20px] italic tracking-[4px] sm:tracking-[6px] lg:tracking-[8px] font-libre text-[var(--color-secondary)] mb-6 sm:mb-8 lg:mb-8"
+      >
+        50 years of expertise
+      </p>
+      <article className="text-xl sm:text-2xl lg:text-3xl xl:text-3xl font-thin font-caudex">
+        <p className="mb-8 sm:mb-10 lg:mb-12">
+          For over 50 years, Joalharia Cavalinho has been dedicated to the art of fine jewelry and
+          watchmaking with the same passion, care, and craftsmanship that defined our beginnings.
+        </p>
+        <p>
+          We are a family-run, heritage shop known for our close relationship with customers and our
+          unique selection of pieces that stand the test of time.
+        </p>
+      </article>
+    </div>
 
-            <div id="left-positioner-div" className="h-[100%] w-full max-w-[50vw] flex items-center justify-center flex-col px-[18rem]">
-              <h3 className="text-6xl text-center mb-28 self-center">About Us</h3>
-              <p id="hero-h2" className="text-center text-[20px] italic tracking-[8px] mt-8 font-libre text-[var(--color-secondary)] mb-[32px]">
-                50 years of expertiese
-              </p>
-              <article className="text-4xl font-thin font-caudex">
-                <p className="mb-16">For over 50 years, Joalharia Cavalinho has been dedicated to the art of fine jewelry and watchmaking with the same passion, care, and craftsmanship that defined our beginnings.</p>
-                <p>We are a family-run, heritage shop known for our close relationship with customers and our unique selection of pieces that stand the test of time.</p>
-              </article>
-            </div>
+    {/* Image */}
+    <div className="w-full lg:w-1/2 order-first lg:order-last">
+      <div className="w-full h-[260px] sm:h-[360px] lg:h-full min-h-[400px] relative">
+        <Image
+          src="/shop-outside.webp"
+          alt="Outside view of Joalharia Cavalinho shop"
+          fill
+          sizes="(max-width: 1024px) 100vw, 50vw"
+          className="object-cover"
+        />
+      </div>
+    </div>
 
-            
-            <div id="left-positioner-div" className=" h-[100%] w-[50vw] max-w-[50vw] flex justify-center flex-col">
-              <div className="w-full h-[450px]  relative">
-                <Image
-                  src="/shop-outside.webp"
-                  alt="Watches"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-            </div>
+  </div>
 
-          </div>
+  {/* Block 2: Image left, Text right */}
+  <div id="block-2" className="w-full h-auto flex flex-col lg:flex-row ">
 
+    {/* Image */}
+    <div className="w-full lg:w-1/2">
+      <div className="w-full h-[260px] sm:h-[360px] lg:h-full min-h-[400px] relative">
+        <Image
+          src="/vitrine.webp"
+          alt="Interior vitrine display of jewelry at Joalharia Cavalinho"
+          fill
+          sizes="(max-width: 1024px) 100vw, 50vw"
+          className="object-cover"
+        />
+      </div>
+    </div>
 
-          <div id="positioner-div" className="w-full h-screen flex ">
+    {/* Text */}
+    <div className="w-full lg:w-1/2 flex items-center justify-center flex-col px-6 py-12 sm:px-10 sm:py-16 md:px-16 md:py-20 lg:px-16 xl:px-24">
+      <p
+        id="hero-h2"
+        className="text-center text-sm sm:text-base lg:text-[20px] italic tracking-[4px] sm:tracking-[6px] lg:tracking-[8px] font-libre text-[var(--color-secondary)] mb-6 sm:mb-8 lg:mb-8"
+      >
+        A Boutique of Treasures
+      </p>
+      <article className="text-xl sm:text-2xl lg:text-3xl xl:text-3xl font-thin font-caudex">
+        <p className="mb-8 sm:mb-10 lg:mb-12">
+          Our space—warm, intimate, and reminiscent of a small brocante—is filled with exceptional
+          finds, refined jewelry, Portuguese-made creations, and carefully chosen second-hand
+          beauties. Here you'll discover everything from Pandora, Seiko, and Filigree pieces to
+          Breitling, Rolex, wedding bands, collectors' items, and many other rare artifacts.
+        </p>
+        <p className="mb-8 sm:mb-10 lg:mb-12">
+          More than a store, we are a meeting place for enthusiasts who value authenticity, history,
+          and lasting quality. With hundreds of satisfied customers over the decades, we continue to
+          offer expert knowledge, dedicated service, and that unmistakable feeling of finding
+          something that seems meant just for you.
+        </p>
+        <p>At Joalharia Cavalinho, there's always a treasure waiting.</p>
+      </article>
+    </div>
 
-           
+  </div>
 
-            
-            <div id="left-positioner-div" className=" h-[100%] w-[50vw] max-w-[50vw] flex justify-center flex-col">
-              <div className="w-full h-[450px] relative">
-                <Image
-                  src="/vitrine.webp"
-                  alt="Watches"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-            </div>
-
-             <div id="left-positioner-div" className="h-[100%] w-full max-w-[50vw] flex items-center justify-center flex-col px-[18rem]">
-              <p id="hero-h2" className="text-center text-[20px] italic tracking-[8px] mt-8 font-libre text-[var(--color-secondary)] mb-[32px]">
-                A Boutique of Treasures
-              </p>
-              <article className="text-4xl font-thin font-caudex">
-                <p className="mb-16">Our space—warm, intimate, and reminiscent of a small brocante—is filled with exceptional finds, refined jewelry, Portuguese-made creations, and carefully chosen second-hand beauties. Here you’ll discover everything from Pandora, Seiko, and Filigree pieces to Breitling, Rolex, wedding bands, collectors’ items, and many other rare artifacts.</p>
-                <p className="mb-16">More than a store, we are a meeting place for enthusiasts who value authenticity, history, and lasting quality. With hundreds of satisfied customers over the decades, we continue to offer expert knowledge, dedicated service, and that unmistakable feeling of finding something that seems meant just for you.</p>
-                <p>At Joalharia Cavalinho, there’s always a treasure waiting.</p>
-              </article>
-            </div>
-
-          </div>
-
-      </section>
+</section>
 
       {/* MEET THE OWNER */}
       <section id="owner-section" className="w-screen min-h-screen text-black bg-white relative">
