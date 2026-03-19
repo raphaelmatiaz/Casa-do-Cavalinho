@@ -509,8 +509,7 @@ export default function Home() {
   </div>
 
 </section>
-
-     {/* SERVICES */}
+{/* SERVICES */}
 <section id="services-section" className="w-screen min-h-screen text-black bg-[#E2E2E2] relative">
   <div className="w-full h-fit flex">
     <div className="flex flex-col items-center justify-center w-full px-6 py-12 sm:px-10 sm:py-16 md:px-12 md:py-20 lg:px-16">
@@ -537,33 +536,46 @@ export default function Home() {
         <ServiceCard service="Bath Plating (Gold and Silver)" image="/service-bath.jpeg" />
         <ServiceCard service="Scratch Removal (Watches and Jewelery)" image="/service-scratch-removal.jpeg" />
         <ServiceCard service="Custom Jewelery (to order)" image="/service-custom-jewellery.jpeg" />
+
+        {/* 11 cards: tablet (2-col) has 1 orphan, desktop (3-col) has 2 orphans */}
+        <div aria-hidden="true" className="hidden sm:block sm:w-[calc(50%-1.25rem)] lg:w-[calc(33.333%-1.25rem)] xl:w-[36rem] h-0 min-h-0 p-0 m-0 bg-transparent shadow-none border-none" />
       </div>
 
     </div>
   </div>
 </section>
-      {/* PRODUCTS */}
-      <section id="products-section" className="w-screen min-h-screen text-black bg-white relative">
-        <div id="positioner-div" className="w-full h-fit flex">
-          <div className="flex flex-col items-center justify-center w-full">
-            <h3 className="font-libre text-6xl text-center mb-28 self-center">Our Products</h3>
-            <p id="hero-h2" className="text-center text-[20px] italic tracking-[8px] mt-8 font-libre text-[var(--color-secondary)] mb-[32px]">
-              Where Every Corner Reveals a Treasure
-            </p>
-            <div 
-              id="card-container" 
-              className="flex flex-wrap items-left justify-evenly w-full h-fit px-[10vw] gap-y-10">
-                
-                <ProductCard service="Brand New Jewellery" image="/product-new-jewellery.jpeg"></ProductCard>
-                <ProductCard service="Second Hand Jewellery" image="/product-second-hand-jewellery.jpeg"></ProductCard>
-                <ProductCard service="Brand New Wrist Watches" image="/product-brand-new-wrist-watch.jpeg"></ProductCard>
-                <ProductCard service="Second Hand Wrist Watches" image="/product-second-hand-wrist-watch.jpeg"></ProductCard>
-                <ProductCard service="Second Hand Pocket Watches" image="/product-second-hand-pocket-watch.jpeg"></ProductCard>
-                <ProductCard service="Portuguese Hand Made Jewels (Silver & Gold)" image="/product-portuguese-hand-made.jpeg"></ProductCard>
-            </div>
-          </div>
-        </div>
-      </section>
+
+{/* PRODUCTS */}
+<section id="products-section" className="w-screen min-h-screen text-black bg-white relative">
+  <div className="w-full h-fit flex">
+    <div className="flex flex-col items-center justify-center w-full px-6 py-12 sm:px-10 sm:py-16 md:px-12 md:py-20 lg:px-16">
+
+      <h3 className="font-libre text-4xl sm:text-5xl lg:text-6xl text-center mb-6 sm:mb-10 lg:mb-16">
+        Our Products
+      </h3>
+      <p className="text-center text-sm sm:text-base lg:text-[20px] italic tracking-[4px] sm:tracking-[6px] lg:tracking-[8px] font-libre text-[var(--color-secondary)] mb-10 sm:mb-14 lg:mb-16">
+        Where Every Corner Reveals a Treasure
+      </p>
+
+      <div
+        id="card-container"
+        className="flex flex-wrap justify-center sm:justify-between w-full h-fit gap-6 sm:gap-5 lg:gap-8"
+      >
+        <ProductCard service="Brand New Jewellery" image="/product-new-jewellery.jpeg" />
+        <ProductCard service="Second Hand Jewellery" image="/product-second-hand-jewellery.jpeg" />
+        <ProductCard service="Brand New Wrist Watches" image="/product-brand-new-wrist-watch.jpeg" />
+        <ProductCard service="Second Hand Wrist Watches" image="/product-second-hand-wrist-watch.jpeg" />
+        <ProductCard service="Second Hand Pocket Watches" image="/product-second-hand-pocket-watch.jpeg" />
+        <ProductCard service="Portuguese Hand Made Jewels (Silver & Gold)" image="/product-portuguese-hand-made.jpeg" />
+
+        {/* Invisible spacers to left-align the last row */}
+        <div aria-hidden="true" className="hidden sm:block sm:w-[calc(50%-1.25rem)] lg:w-[calc(33.333%-1.25rem)] xl:w-[36rem] h-0 min-h-0 p-0 m-0 bg-transparent shadow-none border-none" />
+        <div aria-hidden="true" className="hidden lg:block lg:w-[calc(33.333%-1.25rem)] xl:w-[36rem] h-0 min-h-0 p-0 m-0 bg-transparent shadow-none border-none" />
+      </div>
+
+    </div>
+  </div>
+</section>
 
       {/* HIGHLIGHTS */}
       <section id="highlights-section" className="w-screen h-fit text-white bg-black relative">

@@ -9,29 +9,21 @@ type ProductCardProps = {
 
 export default function ProductCard({service, image}: ProductCardProps) {
     return (
-        <>
-            <div className="w-[36rem] h-fit min-h-[500px] bg-[#e3e3e3] p-8 shadow-2xl">
-                <div className="w-full h-[280px] relative">
-                    <Image 
-                        src={`${image}`} 
-                        alt="Card Image" 
-                        fill
-                        className="object-cover shadow-inner"
-                        >
-                    </Image>
-                </div>
-                  <div className="flex items-center justify-center border-b border-black pb-8">
-                    <p className="text-4xl mt-[40px] self-center text-center  max-w-[200px] ">{service}</p>
-                </div>
-                {/* <ul className="text-3xl font-caudex list-disc ml-9">
-                    <li>Lorem ipsum dolor sit amet.</li>
-                    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, optio!</li>
-                    <li>Lorem ipsum dolor sit amet consectetur adipisicing.</li>
-                </ul> */}
-                {/* <button className="mt-16 bg-[var(--color-secondary)] px-32 min-w-full py-5 rounded-full text-3xl text-white shadow-2xl">
-                    Learn More
-                </button> */}
+        <div className="w-full sm:w-[calc(50%-1.25rem)] lg:w-[calc(33.333%-1.25rem)] xl:w-[36rem] h-fit min-h-[380px] sm:min-h-[440px] lg:min-h-[500px] bg-[#e3e3e3] p-6 sm:p-8 shadow-2xl flex flex-col">
+            <div className="w-full h-[200px] sm:h-[240px] lg:h-[280px] relative">
+                <Image
+                    src={image}
+                    alt={`${service} product`}
+                    fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 36rem"
+                    className="object-cover shadow-inner"
+                />
             </div>
-        </>
+            <div className="flex flex-1 items-center justify-center border-b border-black pb-6 sm:pb-8">
+                <p className="text-2xl sm:text-3xl xl:text-3xl mt-8 self-center text-center max-w-[200px]">
+                    {service}
+                </p>
+            </div>
+        </div>
     )
 }
