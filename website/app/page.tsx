@@ -590,53 +590,63 @@ export default function Home() {
   </p>
 </section> */}
 
-      {/* CONTACT */}
-      <section id="contact-section" className="w-screen min-h-screen h-fit text-black bg-white relative">
+     {/* CONTACT */}
+<section id="contact-section" className="w-screen min-h-screen h-fit text-black bg-white relative">
 
-        <div id="positioner-div" className="w-full flex ">
+  <div className="w-full flex flex-col lg:flex-row">
 
-          <div id="left-positioner-div" className=" min-w-[50vw] h-fit flex flex-col justify-center items-center">
-            <div id="wrapper" className="px-[30%]">
-              <h3 className="text-6xl text-center mb-[32px]">Get it Touch</h3>
-               <div className="">
-                 <p className="text-center text-[20px] italic tracking-[8px] font-libre text-black my-[32px]">
-                  We’d Love to Hear <br /> From You
-                  </p>
-                  <p className="text-4xl font-caudex text-center">Feel Free to Email the owner through our contact form on the right, or by contacting at: </p>
-                  <p
-                  className="text-4xl font-caudex mb-[32px] border-b border-black py-[24px] flex flex-col justify-center items-center text-center">
-                  jorge.albufeira55@gmail.com</p>
-                  <p className="text-4xl font-caudex text-center">For any further assistance, feel free to directly call the owner at: </p>
-                  <p 
-                  className="text-4xl font-caudex mb-[32px] border-b border-black py-[24px] flex flex-col justify-center items-center text-center">
-                  (+351) 914824244</p>
-               </div>
-            </div>
-          </div>
+    {/* Left: Contact Info */}
+    <div className="flex-1 flex flex-col justify-center items-center px-8 py-12 sm:px-14 sm:py-16 md:px-20 md:py-20 lg:px-16 xl:px-24">
 
-          <div id="right-positioner-div" className=" h-fit w-full flex items-center justify-center flex-col">
-               
-                <ContactForm></ContactForm>
-                
-          </div>
+      <h3 className="font-libre text-4xl sm:text-5xl lg:text-6xl text-center mb-6 sm:mb-8 lg:mb-10">
+        Get in Touch
+      </h3>
 
-        </div>
-        
-      </section>
+      <p className="text-center text-sm sm:text-base lg:text-[20px] italic tracking-[4px] sm:tracking-[6px] lg:tracking-[8px] font-libre text-black mb-8 sm:mb-10 lg:mb-12">
+        We'd Love to Hear <br /> From You
+      </p>
+
+      <p className="text-xl sm:text-2xl xl:text-3xl font-caudex text-center mb-4">
+        Feel free to email the owner through our contact form, or directly at:
+      </p>
+      <p className="text-xl sm:text-2xl xl:text-3xl font-caudex text-center border-b border-black py-5 mb-8 sm:mb-10 w-full">
+        jorge.albufeira55@gmail.com
+      </p>
+
+      <p className="text-xl sm:text-2xl xl:text-3xl font-caudex text-center mb-4">
+        For any further assistance, feel free to call the owner directly at:
+      </p>
+      <p className="text-xl sm:text-2xl xl:text-3xl font-caudex text-center border-b border-black py-5 w-full">
+        (+351) 914 824 244
+      </p>
+
+    </div>
+
+    {/* Right: Contact Form */}
+    <div className="flex-1 flex items-center justify-center px-8 py-12 sm:px-14 sm:py-16 md:px-20 lg:px-16 xl:px-24 bg-gray-50">
+      <ContactForm />
+    </div>
+
+  </div>
+
+</section>
             
-      <footer className="bg-[#313131] relative">
-        <Image 
-          src={"/logo-white.png"} 
-          width={400} 
-          height={400} 
-          alt="Logo Image"
-          className="p-16 ml-32"
-          onClick={() => {scrollToTop()}}>
-          
+<footer className="bg-[#313131] relative flex flex-col items-center lg:flex-row lg:items-center lg:justify-between px-6 py-10 sm:px-10 md:px-16 lg:px-24">
 
-        </Image>
-        <p className="absolute bottom-16 right-32 text-3xl">Joalharia Cavalinho 2025, All Rights Reserved</p>
-      </footer>
+  <Image
+    src="/logo-white.png"
+    width={400}
+    height={400}
+    alt="Joalharia Cavalinho logo"
+    className="w-40 sm:w-52 lg:w-64 h-auto cursor-pointer"
+    onClick={() => scrollToTop()}
+  />
+
+  <p className="text-white text-sm sm:text-base lg:text-xl xl:text-2xl text-center lg:text-right mt-6 lg:mt-0">
+    Joalharia Cavalinho {new Date().getFullYear()}, All Rights Reserved
+  </p>
+
+</footer>
 
     </>
   )
