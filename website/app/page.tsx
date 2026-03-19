@@ -510,34 +510,38 @@ export default function Home() {
 
 </section>
 
-      {/* SERVICES */}
-      <section id="services-section" className="w-screen min-h-screen text-black bg-[#E2E2E2] relative">
-        <div id="positioner-div" className="w-full h-fit flex">
-          <div className="flex flex-col items-center justify-center w-full">
-            <h3 className="font-libre text-6xl text-center mb-28 self-center">Our Services</h3>
-            <p id="hero-h2" className="text-center text-[20px] italic tracking-[8px] mt-8 font-libre text-[var(--color-secondary)] mb-[32px]">
-              Every Service You Need <br /> All Under One Roof
-            </p>
-            <div 
-              id="card-container" 
-              className="flex flex-wrap items-left justify-evenly w-full h-fit px-[10vw] gap-y-10">
-                
-                <ServiceCard service="Watch Battery Change" image="/service-battery-change.jpeg"></ServiceCard>
-                <ServiceCard service="Clock and Watch Repairs" image="/service-watch-repair.jpeg"></ServiceCard>
-                <ServiceCard service="Clock and Watch Cleaning" image="/service-watch-cleaning.jpeg"></ServiceCard>
-                <ServiceCard service="Jewelery Repairs" image="/service-jewellery-repair.jpeg"></ServiceCard>
-                <ServiceCard service="Jewelery Cleaning" image="/service-jewellery-cleaning.jpg"></ServiceCard>
-                <ServiceCard service="Jewelery Sizing Adjustment" image="/service-jeweller-sizing.jpeg"></ServiceCard>
-                <ServiceCard service="Stone Setting" image="/service-stone-settings.jpeg"></ServiceCard>
-                <ServiceCard service="Engraving" image="/service-engraving.jpeg"></ServiceCard>
-                <ServiceCard service="Bath Plating (Gold and Silver)" image="/service-bath.jpeg"></ServiceCard>
-                <ServiceCard service="Scratch Removal (Watches and Jewelery)" image="/service-scratch-removal.jpeg"></ServiceCard>
-                <ServiceCard service="Custom Jewelery (to order)" image="/service-custom-jewellery.jpeg"></ServiceCard>
-            </div>
-          </div>
-        </div>
-      </section>
+     {/* SERVICES */}
+<section id="services-section" className="w-screen min-h-screen text-black bg-[#E2E2E2] relative">
+  <div className="w-full h-fit flex">
+    <div className="flex flex-col items-center justify-center w-full px-6 py-12 sm:px-10 sm:py-16 md:px-12 md:py-20 lg:px-16">
 
+      <h3 className="font-libre text-4xl sm:text-5xl lg:text-6xl text-center mb-6 sm:mb-10 lg:mb-16">
+        Our Services
+      </h3>
+      <p className="text-center text-sm sm:text-base lg:text-[20px] italic tracking-[4px] sm:tracking-[6px] lg:tracking-[8px] font-libre text-[var(--color-secondary)] mb-10 sm:mb-14 lg:mb-16">
+        Every Service You Need <br /> All Under One Roof
+      </p>
+
+      <div
+        id="card-container"
+        className="flex flex-wrap justify-center sm:justify-between w-full h-fit gap-6 sm:gap-5 lg:gap-8"
+      >
+        <ServiceCard service="Watch Battery Change" image="/service-battery-change.jpeg" />
+        <ServiceCard service="Clock and Watch Repairs" image="/service-watch-repair.jpeg" />
+        <ServiceCard service="Clock and Watch Cleaning" image="/service-watch-cleaning.jpeg" />
+        <ServiceCard service="Jewelery Repairs" image="/service-jewellery-repair.jpeg" />
+        <ServiceCard service="Jewelery Cleaning" image="/service-jewellery-cleaning.jpg" />
+        <ServiceCard service="Jewelery Sizing Adjustment" image="/service-jeweller-sizing.jpeg" />
+        <ServiceCard service="Stone Setting" image="/service-stone-settings.jpeg" />
+        <ServiceCard service="Engraving" image="/service-engraving.jpeg" />
+        <ServiceCard service="Bath Plating (Gold and Silver)" image="/service-bath.jpeg" />
+        <ServiceCard service="Scratch Removal (Watches and Jewelery)" image="/service-scratch-removal.jpeg" />
+        <ServiceCard service="Custom Jewelery (to order)" image="/service-custom-jewellery.jpeg" />
+      </div>
+
+    </div>
+  </div>
+</section>
       {/* PRODUCTS */}
       <section id="products-section" className="w-screen min-h-screen text-black bg-white relative">
         <div id="positioner-div" className="w-full h-fit flex">
