@@ -190,7 +190,7 @@ export default function Home() {
 
         <div
           id="scroll-icon-positioner"
-          className="absolute bottom-2 z-10 flex w-screen items-center justify-center md:bottom-0"
+          className="absolute bottom-2 z-10 flex w-full items-center justify-center md:bottom-0"
         >
           <div className="flex flex-col items-center">
             <p className="relative left-[4px] text-xs italic tracking-[4px] md:text-sm md:tracking-[10px]">
