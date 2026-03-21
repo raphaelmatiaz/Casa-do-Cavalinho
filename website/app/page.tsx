@@ -35,89 +35,121 @@ export default function Home() {
     localTime: string;
   };
 
-  const getShopStatusInfo = (): ShopStatusInfo => {
-    const formatter = new Intl.DateTimeFormat("en-GB", {
-      timeZone: "Europe/Lisbon",
-      weekday: "long",
-      hour: "2-digit",
-      minute: "2-digit",
-      hour12: false,
-    });
+const getShopStatusInfo = (): ShopStatusInfo => {
+  const formatter = new Intl.DateTimeFormat("en-GB", {
+    timeZone: "Europe/Lisbon",
+    weekday: "long",
+    hour: "2-digit",
+    minute: "2-digit",
+    hour12: false,
+  });
 
-    const parts = formatter.formatToParts(new Date());
-    const day = parts.find((part) => part.type === "weekday")?.value ?? "Monday";
-    const hour = Number(parts.find((part) => part.type === "hour")?.value ?? "0");
-    const minute = Number(parts.find((part) => part.type === "minute")?.value ?? "0");
-    const localTime = `${String(hour).padStart(2, "0")}:${String(minute).padStart(2, "0")}`;
+  const parts = formatter.formatToParts(new Date());
+  const day = parts.find((part) => part.type === "weekday")?.value ?? "Monday";
+  const hour = Number(parts.find((part) => part.type === "hour")?.value ?? "0");
+  const minute = Number(parts.find((part) => part.type === "minute")?.value ?? "0");
+  const localTime = `${String(hour).padStart(2, "0")}:${String(minute).padStart(2, "0")}`;
 
-    const currentMinutes = hour * 60 + minute;
-    const openingMinutes = 10 * 60 + 30;
-    const closingWarningMinutes = 13 * 60;
-    const closingMinutes = 13 * 60 + 30;
+  const currentMinutes = hour * 60 + minute;
+  const openingMinutes = 10 * 60 + 30;        // 10:30
+  const closingWarningMinutes = 13 * 60 + 20;  // 13:20  ← changed from 13:00
+  const closingMinutes = 13 * 60 + 30;         // 13:30
 
-    const isFriday = day === "Friday";
-    const isSaturday = day === "Saturday";
-    const isSunday = day === "Sunday";
-    const isWeekend = isSaturday || isSunday;
+  const isFriday    = day === "Friday";
+  const isSaturday  = day === "Saturday";
+  const isSunday    = day === "Sunday";
+  const isThursday  = day === "Thursday";
 
-    if (isFriday || isSaturday || (!isWeekend && currentMinutes >= closingMinutes)) {
-      return {
-        statusLabel: "Closed",
-        statusColorClass: "text-red-700",
-        statusText: "Our shop is currently",
-        secondaryText: "We open tomorrow at 10:30am",
-        showCallNote: false,
-        localDay: day,
-        localTime,
-      };
-    }
-
-    if (!isWeekend && currentMinutes >= closingWarningMinutes && currentMinutes < closingMinutes) {
-      return {
-        statusLabel: "Closing",
-        statusColorClass: "text-orange-500",
-        statusText: "Our shop is currently",
-        secondaryText: "We close at 1:30pm",
-        showCallNote: false,
-        localDay: day,
-        localTime,
-      };
-    }
-
-    if (!isWeekend && currentMinutes >= openingMinutes && currentMinutes < closingWarningMinutes) {
-      return {
-        statusLabel: "Open",
-        statusColorClass: "text-green-700",
-        statusText: "Our shop is currently:",
-        secondaryText: "",
-        showCallNote: true,
-        localDay: day,
-        localTime,
-      };
-    }
-
-    if (isWeekend) {
-      return {
-        statusLabel: "Closed",
-        statusColorClass: "text-red-700",
-        statusText: "Our shop is currently:",
-        secondaryText: "We open tomorrow at 10:30am",
-        showCallNote: false,
-        localDay: day,
-        localTime,
-      };
-    }
-
+  // Friday or Saturday → closed, next opening is Monday
+  if (isFriday || isSaturday) {
     return {
       statusLabel: "Closed",
       statusColorClass: "text-red-700",
-      statusText: "Our shop is currently:",
+      statusText: "Our shop is currently",
+      secondaryText: "We open next Monday at 10:30am",
+      showCallNote: false,
+      localDay: day,
+      localTime,
+    };
+  }
+
+  // Sunday → closed, tomorrow is Monday
+  if (isSunday) {
+    return {
+      statusLabel: "Closed",
+      statusColorClass: "text-red-700",
+      statusText: "Our shop is currently",
+      secondaryText: "We open tomorrow at 10:30am",
+      showCallNote: false,
+      localDay: day,
+      localTime,
+    };
+  }
+
+  // Weekday: before opening
+  if (currentMinutes < openingMinutes) {
+    return {
+      statusLabel: "Closed",
+      statusColorClass: "text-red-700",
+      statusText: "Our shop is currently",
       secondaryText: "We open today at 10:30am",
       showCallNote: false,
       localDay: day,
       localTime,
     };
+  }
+
+  // Weekday: open window (10:30–13:20)
+  if (currentMinutes >= openingMinutes && currentMinutes < closingWarningMinutes) {
+    return {
+      statusLabel: "Open",
+      statusColorClass: "text-green-700",
+      statusText: "Our shop is currently:",
+      secondaryText: "",
+      showCallNote: true,
+      localDay: day,
+      localTime,
+    };
+  }
+
+  // Weekday: closing soon (13:20–13:30)
+  if (currentMinutes >= closingWarningMinutes && currentMinutes < closingMinutes) {
+    return {
+      statusLabel: "Closing",
+      statusColorClass: "text-orange-500",
+      statusText: "Our shop is currently",
+      secondaryText: "We close at 1:30pm",
+      showCallNote: false,
+      localDay: day,
+      localTime,
+    };
+  }
+
+  // Weekday: after closing (≥13:30)
+  // Thursday → tomorrow is Friday (not open), so next open day is Monday
+  if (isThursday) {
+    return {
+      statusLabel: "Closed",
+      statusColorClass: "text-red-700",
+      statusText: "Our shop is currently",
+      secondaryText: "We open next Monday at 10:30am",
+      showCallNote: false,
+      localDay: day,
+      localTime,
+    };
+  }
+
+  // Monday, Tuesday, Wednesday after closing → opens tomorrow
+  return {
+    statusLabel: "Closed",
+    statusColorClass: "text-red-700",
+    statusText: "Our shop is currently",
+    secondaryText: "We open tomorrow at 10:30am",
+    showCallNote: false,
+    localDay: day,
+    localTime,
   };
+};
 
   const shopStatusInfo = getShopStatusInfo();
 
@@ -609,14 +641,14 @@ export default function Home() {
       <p className="text-xl sm:text-2xl xl:text-3xl font-caudex text-center mb-4">
         Feel free to email the owner through our contact form, or directly at:
       </p>
-      <p className="text-xl sm:text-2xl xl:text-3xl font-caudex text-center border-b border-black py-5 mb-8 sm:mb-10 w-full">
+      <p className="text-xl sm:text-2xl xl:text-3xl font-caudex text-center border-b border-white py-5 mb-8 sm:mb-10 w-full">
         &#10146; jorge.albufeira55@gmail.com
       </p>
 
       <p className="text-xl sm:text-2xl xl:text-3xl font-caudex text-center mb-4">
         For any further assistance, feel free to call the owner directly at:
       </p>
-      <p className="text-xl sm:text-2xl xl:text-3xl font-caudex text-center border-b border-black py-5 w-full">
+      <p className="text-xl sm:text-2xl xl:text-3xl font-caudex text-center border-b border-white py-5 w-full">
         &#10146; (+351) 914 824 244
       </p>
 
