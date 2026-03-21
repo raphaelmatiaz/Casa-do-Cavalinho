@@ -641,14 +641,14 @@ const getShopStatusInfo = (): ShopStatusInfo => {
       <p className="text-xl sm:text-2xl xl:text-3xl font-caudex text-center mb-4">
         Feel free to email the owner through our contact form, or directly at:
       </p>
-      <p className="text-xl sm:text-2xl xl:text-3xl font-caudex text-center border-b border-black py-5 mb-8 sm:mb-10 w-full">
+      <p className="text-xl sm:text-2xl xl:text-3xl font-caudex text-center border-b border-white py-5 mb-8 sm:mb-10 w-full">
         &#10146; jorge.albufeira55@gmail.com
       </p>
 
       <p className="text-xl sm:text-2xl xl:text-3xl font-caudex text-center mb-4">
         For any further assistance, feel free to call the owner directly at:
       </p>
-      <p className="text-xl sm:text-2xl xl:text-3xl font-caudex text-center border-b border-black py-5 w-full">
+      <p className="text-xl sm:text-2xl xl:text-3xl font-caudex text-center border-b border-white py-5 w-full">
         &#10146; (+351) 914 824 244
       </p>
 
